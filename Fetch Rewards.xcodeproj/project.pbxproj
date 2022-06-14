@@ -67,9 +67,9 @@
 		CD495F132859200E007C24E4 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				CD495F0D28591CC5007C24E4 /* Info.plist */,
 				CD495EFF28591CC3007C24E4 /* AppDelegate.swift */,
 				CD495F0128591CC3007C24E4 /* SceneDelegate.swift */,
+				CD495F0D28591CC5007C24E4 /* Info.plist */,
 				CD495F0828591CC5007C24E4 /* Assets.xcassets */,
 			);
 			path = Configuration;
