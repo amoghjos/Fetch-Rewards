@@ -23,7 +23,7 @@
 		CD495F0628591CC3007C24E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD495F0828591CC5007C24E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD495F0B28591CC5007C24E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CD495F0D28591CC5007C24E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD495F0D28591CC5007C24E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Fetch Rewards/Configuration/Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,47 @@
 		CD495EFE28591CC3007C24E4 /* Fetch Rewards */ = {
 			isa = PBXGroup;
 			children = (
-				CD495EFF28591CC3007C24E4 /* AppDelegate.swift */,
-				CD495F0128591CC3007C24E4 /* SceneDelegate.swift */,
-				CD495F0328591CC3007C24E4 /* ViewController.swift */,
-				CD495F0528591CC3007C24E4 /* Main.storyboard */,
-				CD495F0828591CC5007C24E4 /* Assets.xcassets */,
-				CD495F0A28591CC5007C24E4 /* LaunchScreen.storyboard */,
-				CD495F0D28591CC5007C24E4 /* Info.plist */,
+				CD495F132859200E007C24E4 /* Configuration */,
+				CD495F16285920B5007C24E4 /* Model */,
+				CD495F152859202D007C24E4 /* View */,
+				CD495F1428592020007C24E4 /* Controller */,
 			);
 			path = "Fetch Rewards";
+			sourceTree = "<group>";
+		};
+		CD495F132859200E007C24E4 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F0D28591CC5007C24E4 /* Info.plist */,
+				CD495EFF28591CC3007C24E4 /* AppDelegate.swift */,
+				CD495F0128591CC3007C24E4 /* SceneDelegate.swift */,
+				CD495F0828591CC5007C24E4 /* Assets.xcassets */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CD495F1428592020007C24E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F0328591CC3007C24E4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD495F152859202D007C24E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F0A28591CC5007C24E4 /* LaunchScreen.storyboard */,
+				CD495F0528591CC3007C24E4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD495F16285920B5007C24E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +321,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 86J3SRZ52R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Fetch Rewards/Info.plist";
+				INFOPLIST_FILE = "Fetch Rewards/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 86J3SRZ52R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Fetch Rewards/Info.plist";
+				INFOPLIST_FILE = "Fetch Rewards/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
