@@ -22,7 +22,7 @@ class NetworkModelTests: XCTestCase {
         sut = nil
     }
 
-    func test_getURL_for_TheMealDBEndPoint_getMeals_for_category_dessert() throws {
+    func test_getURL() throws {
         let expectedURL = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
         let actualURL = try XCTUnwrap(sut.getURL(for: StubEndPoint()))
         XCTAssertEqual(expectedURL, actualURL)

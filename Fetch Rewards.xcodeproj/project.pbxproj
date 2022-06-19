@@ -22,6 +22,8 @@
 		CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */; };
 		CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB0285FA49C00306350 /* EndPoints.swift */; };
 		CDBA5DB4285FA77F00306350 /* StubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB3285FA77F00306350 /* StubEndPoint.swift */; };
+		CDBA5DB6285FBA4A00306350 /* TheMealDBNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */; };
+		CDBA5DB8285FBA9700306350 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB7285FBA9700306350 /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealDetailsForIDTests.swift; sourceTree = "<group>"; };
 		CDBA5DB0285FA49C00306350 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		CDBA5DB3285FA77F00306350 /* StubEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubEndPoint.swift; sourceTree = "<group>"; };
+		CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkResponse.swift; sourceTree = "<group>"; };
+		CDBA5DB7285FBA9700306350 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CD495F2A28598737007C24E4 /* Networking */,
+				CDBA5DB7285FBA9700306350 /* Meal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			children = (
 				CD495F2C285987EF007C24E4 /* TheMealDB.swift */,
 				CDBA5DAA285F94F100306350 /* MealsCategory.swift */,
+				CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */,
 			);
 			path = TheMealDB;
 			sourceTree = "<group>";
@@ -302,8 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBA5DB8285FBA9700306350 /* Meal.swift in Sources */,
 				CDBA5DAB285F94F100306350 /* MealsCategory.swift in Sources */,
 				CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */,
+				CDBA5DB6285FBA4A00306350 /* TheMealDBNetworkResponse.swift in Sources */,
 				CD495F0428591CC3007C24E4 /* ViewController.swift in Sources */,
 				CD495F2928598727007C24E4 /* EndPoint.swift in Sources */,
 				CD495F2D285987EF007C24E4 /* TheMealDB.swift in Sources */,
