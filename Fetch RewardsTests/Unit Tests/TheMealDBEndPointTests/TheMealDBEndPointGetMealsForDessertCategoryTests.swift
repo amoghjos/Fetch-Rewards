@@ -13,7 +13,7 @@ class TheMealDBEndPointGetMealsForDessertCategoryTests: XCTestCase {
     var sut: EndPoint!
     
     override func setUpWithError() throws {
-        sut = TheMealDBEndPoint.getMeals(category: .dessert)
+        sut = EndPoints.TheMealDB.getMeals(category: .dessert)
     }
     
     override func tearDownWithError() throws {

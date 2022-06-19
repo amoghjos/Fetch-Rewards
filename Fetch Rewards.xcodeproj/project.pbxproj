@@ -17,9 +17,10 @@
 		CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F24285924E5007C24E4 /* NetworkModel.swift */; };
 		CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */; };
 		CD495F2928598727007C24E4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2828598727007C24E4 /* EndPoint.swift */; };
-		CD495F2D285987EF007C24E4 /* TheMealDBEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */; };
+		CD495F2D285987EF007C24E4 /* TheMealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDB.swift */; };
 		CDBA5DAB285F94F100306350 /* MealsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAA285F94F100306350 /* MealsCategory.swift */; };
 		CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */; };
+		CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB0285FA49C00306350 /* EndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +47,10 @@
 		CD495F24285924E5007C24E4 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealsForDessertCategoryTests.swift; sourceTree = "<group>"; };
 		CD495F2828598727007C24E4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPoint.swift; sourceTree = "<group>"; };
+		CD495F2C285987EF007C24E4 /* TheMealDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDB.swift; sourceTree = "<group>"; };
 		CDBA5DAA285F94F100306350 /* MealsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCategory.swift; sourceTree = "<group>"; };
 		CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealDetailsForIDTests.swift; sourceTree = "<group>"; };
+		CDBA5DB0285FA49C00306350 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				CD495F2828598727007C24E4 /* EndPoint.swift */,
+				CDBA5DB0285FA49C00306350 /* EndPoints.swift */,
 				CDBA5DA9285F94DD00306350 /* TheMealDBEndPoint */,
 			);
 			path = EndPoints;
@@ -163,7 +166,7 @@
 		CDBA5DA9285F94DD00306350 /* TheMealDBEndPoint */ = {
 			isa = PBXGroup;
 			children = (
-				CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */,
+				CD495F2C285987EF007C24E4 /* TheMealDB.swift */,
 				CDBA5DAA285F94F100306350 /* MealsCategory.swift */,
 			);
 			path = TheMealDBEndPoint;
@@ -292,8 +295,9 @@
 				CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */,
 				CD495F0428591CC3007C24E4 /* ViewController.swift in Sources */,
 				CD495F2928598727007C24E4 /* EndPoint.swift in Sources */,
-				CD495F2D285987EF007C24E4 /* TheMealDBEndPoint.swift in Sources */,
+				CD495F2D285987EF007C24E4 /* TheMealDB.swift in Sources */,
 				CD495F0028591CC3007C24E4 /* AppDelegate.swift in Sources */,
+				CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */,
 				CD495F0228591CC3007C24E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

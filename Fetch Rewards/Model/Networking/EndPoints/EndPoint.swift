@@ -7,12 +7,19 @@
 
 import Foundation
 
-//EndPoint defines rules for any existing or new API we want add to our codebase
+//EndPoint defines rules for any existing or new API we want to use
 //Inspiration: https://www.swiftbysundell.com/articles/constructing-urls-in-swift/
 
 protocol EndPoint {
-    var scheme: String              { get }            //e.g. http or https
-    var host:   String              { get }            //e.g. api.github.com
-    var path:   String              { get }            // e.g. /search/repositories
-    var queryItems: [URLQueryItem]  { get }            //e.g. q="ios_projects"
+    //e.g. http or https
+    var scheme: String              { get }
+    
+    //e.g. api.github.com
+    var host:   String              { get }
+    
+    // e.g. /search/repositories
+    var path:   String              { get }
+    
+    //e.g. q="ios_projects"
+    var queryItems: [URLQueryItem]  { get }
 }

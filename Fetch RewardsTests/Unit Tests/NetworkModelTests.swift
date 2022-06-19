@@ -22,10 +22,9 @@ class NetworkModelTests: XCTestCase {
         sut = nil
     }
 
-    #warning("this network model tests depends on TheMealDBEndPoint to pass, consider using a stub to isolate")
     func test_getURL_for_TheMealDBEndPoint_getMeals_for_category_dessert() throws {
         let expectedURL = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
-        let actualURL = try XCTUnwrap(sut.getURL(for: TheMealDBEndPoint.getMeals(category: .dessert)))
+        let actualURL = try XCTUnwrap(sut.getURL(for: EndPoints.TheMealDB.getMeals(category: .dessert)))
         XCTAssertEqual(expectedURL, actualURL)
     }
 }

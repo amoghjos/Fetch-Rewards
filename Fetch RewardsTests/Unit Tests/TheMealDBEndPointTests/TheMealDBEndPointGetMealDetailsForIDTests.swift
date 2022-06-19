@@ -14,7 +14,7 @@ class TheMealDBEndPointGetMealDetailsForIDTests: XCTestCase {
     let randomMealID = 777
     
     override func setUpWithError() throws {
-        sut = TheMealDBEndPoint.getMealDetails(id: randomMealID)
+        sut = EndPoints.TheMealDB.getMealDetails(id: randomMealID)
     }
     
     override func tearDownWithError() throws {
