@@ -15,9 +15,10 @@
 		CD495F0C28591CC5007C24E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD495F0A28591CC5007C24E4 /* LaunchScreen.storyboard */; };
 		CD495F1E2859239D007C24E4 /* NetworkModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F1D2859239D007C24E4 /* NetworkModelTests.swift */; };
 		CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F24285924E5007C24E4 /* NetworkModel.swift */; };
-		CD495F27285986AF007C24E4 /* TheMealDBEndPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F26285986AF007C24E4 /* TheMealDBEndPointTests.swift */; };
+		CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */; };
 		CD495F2928598727007C24E4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2828598727007C24E4 /* EndPoint.swift */; };
 		CD495F2D285987EF007C24E4 /* TheMealDBEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */; };
+		CDBA5DAB285F94F100306350 /* MealsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAA285F94F100306350 /* MealsCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +43,10 @@
 		CD495F1B2859239D007C24E4 /* Fetch RewardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch RewardsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD495F1D2859239D007C24E4 /* NetworkModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelTests.swift; sourceTree = "<group>"; };
 		CD495F24285924E5007C24E4 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
-		CD495F26285986AF007C24E4 /* TheMealDBEndPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointTests.swift; sourceTree = "<group>"; };
+		CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealsForDessertCategoryTests.swift; sourceTree = "<group>"; };
 		CD495F2828598727007C24E4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPoint.swift; sourceTree = "<group>"; };
+		CDBA5DAA285F94F100306350 /* MealsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +135,7 @@
 		CD495F1C2859239D007C24E4 /* Fetch RewardsTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD495F1D2859239D007C24E4 /* NetworkModelTests.swift */,
-				CD495F26285986AF007C24E4 /* TheMealDBEndPointTests.swift */,
+				CDBA5DAC285F9C4E00306350 /* Unit Tests */,
 			);
 			path = "Fetch RewardsTests";
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				CD495F2B28598746007C24E4 /* EndPoints */,
-				CD495F2828598727007C24E4 /* EndPoint.swift */,
 				CD495F24285924E5007C24E4 /* NetworkModel.swift */,
 			);
 			path = Networking;
@@ -152,9 +152,36 @@
 		CD495F2B28598746007C24E4 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
-				CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */,
+				CD495F2828598727007C24E4 /* EndPoint.swift */,
+				CDBA5DA9285F94DD00306350 /* TheMealDBEndPoint */,
 			);
 			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		CDBA5DA9285F94DD00306350 /* TheMealDBEndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */,
+				CDBA5DAA285F94F100306350 /* MealsCategory.swift */,
+			);
+			path = TheMealDBEndPoint;
+			sourceTree = "<group>";
+		};
+		CDBA5DAC285F9C4E00306350 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F1D2859239D007C24E4 /* NetworkModelTests.swift */,
+				CDBA5DAD285F9C5800306350 /* TheMealDBEndPointTests */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		CDBA5DAD285F9C5800306350 /* TheMealDBEndPointTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */,
+			);
+			path = TheMealDBEndPointTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBA5DAB285F94F100306350 /* MealsCategory.swift in Sources */,
 				CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */,
 				CD495F0428591CC3007C24E4 /* ViewController.swift in Sources */,
 				CD495F2928598727007C24E4 /* EndPoint.swift in Sources */,
@@ -272,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD495F1E2859239D007C24E4 /* NetworkModelTests.swift in Sources */,
-				CD495F27285986AF007C24E4 /* TheMealDBEndPointTests.swift in Sources */,
+				CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
