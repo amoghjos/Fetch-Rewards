@@ -19,6 +19,7 @@
 		CD495F2928598727007C24E4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2828598727007C24E4 /* EndPoint.swift */; };
 		CD495F2D285987EF007C24E4 /* TheMealDBEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */; };
 		CDBA5DAB285F94F100306350 /* MealsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAA285F94F100306350 /* MealsCategory.swift */; };
+		CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CD495F2828598727007C24E4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		CD495F2C285987EF007C24E4 /* TheMealDBEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPoint.swift; sourceTree = "<group>"; };
 		CDBA5DAA285F94F100306350 /* MealsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCategory.swift; sourceTree = "<group>"; };
+		CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealDetailsForIDTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */,
+				CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */,
 			);
 			path = TheMealDBEndPointTests;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				CD495F1E2859239D007C24E4 /* NetworkModelTests.swift in Sources */,
 				CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */,
+				CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import Foundation
 enum TheMealDBEndPoint: EndPoint {
     
     case getMeals(category: MealsCategory)
+    case getMealDetails(id: Int)
 
     var scheme: String {
         return "https"
@@ -20,13 +21,20 @@ enum TheMealDBEndPoint: EndPoint {
     }
     
     var path: String {
-        "/api/json/v1/1/filter.php"
+        switch self {
+        case .getMeals:
+            return "/api/json/v1/1/filter.php"
+        case .getMealDetails:
+            return "/api/json/v1/1/lookup.php"
+        }
     }
     
     var queryItems: [URLQueryItem] {
         switch self {
         case .getMeals(let category):
             return [URLQueryItem(name: "c", value: category.rawValue)]
+        case .getMealDetails(id: let id):
+            return [URLQueryItem(name: "i", value: String(id))]
         }
     }
 }
