@@ -25,7 +25,7 @@ class NetworkModelTests: XCTestCase {
         XCTAssertEqual(expectedURL, actualURL)
     }
     
-    func test_makeGETRequest_for_meal_model() throws {
+    func test_makeGETRequest() throws {
         //arrange input
         let inputMealJSONData = """
         {
@@ -46,12 +46,12 @@ class NetworkModelTests: XCTestCase {
         
         //act: make request
         let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
-        sut.makeGETRequest(at: inputURL){ (actualData: Meal?, error) in
+        sut.makeGETRequest(at: inputURL){ (actualData: MealStub?, error) in
             //assert
             XCTAssertNil(error)
-            XCTAssertEqual(actualData?.name, "Apam balik")
-            XCTAssertEqual(actualData?.id, "53049")
-            XCTAssertEqual(actualData?.imageURL, "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
+            XCTAssertEqual(actualData?.strMeal, "Apam balik")
+            XCTAssertEqual(actualData?.idMeal, "53049")
+            XCTAssertEqual(actualData?.strMealThumb, "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
             networkResponseExpectation.fulfill()
         }
         wait(for: [networkResponseExpectation], timeout: 0.1)

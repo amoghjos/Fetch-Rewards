@@ -8,6 +8,8 @@
 import Foundation
 
 //Citation: https://www.hackingwithswift.com/articles/153/how-to-test-ios-networking-code-the-easy-way
+//Used for testing makeGETRequest
+
 class URLProtocolMock: URLProtocol {
     static var testURLs = [URL?: Data]()
     

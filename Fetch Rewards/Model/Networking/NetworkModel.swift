@@ -12,6 +12,7 @@ struct NetworkModel {
     
     var session: URLSession
     
+    //I'm using dependancy injection to allow for testability
     init(with session: URLSession = URLSession.shared){
         self.session = session
     }

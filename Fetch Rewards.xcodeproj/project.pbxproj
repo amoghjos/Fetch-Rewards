@@ -25,6 +25,7 @@
 		CDBA5DB6285FBA4A00306350 /* TheMealDBNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */; };
 		CDBA5DB8285FBA9700306350 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB7285FBA9700306350 /* Meal.swift */; };
 		CDBBF5202860FFEE0046DC51 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF51F2860FFEE0046DC51 /* URLProtocolMock.swift */; };
+		CDBBF522286102DD0046DC51 /* MealStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF521286102DD0046DC51 /* MealStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkResponse.swift; sourceTree = "<group>"; };
 		CDBA5DB7285FBA9700306350 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		CDBBF51F2860FFEE0046DC51 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		CDBBF521286102DD0046DC51 /* MealStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			children = (
 				CDBA5DB3285FA77F00306350 /* StubEndPoint.swift */,
 				CDBBF51F2860FFEE0046DC51 /* URLProtocolMock.swift */,
+				CDBBF521286102DD0046DC51 /* MealStub.swift */,
 			);
 			path = "Stubs+Mocks";
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBBF522286102DD0046DC51 /* MealStub.swift in Sources */,
 				CDBBF5202860FFEE0046DC51 /* URLProtocolMock.swift in Sources */,
 				CD495F1E2859239D007C24E4 /* NetworkModelTests.swift in Sources */,
 				CDBA5DB4285FA77F00306350 /* StubEndPoint.swift in Sources */,
