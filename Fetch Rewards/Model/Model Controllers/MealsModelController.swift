@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Inspiration: https://www.swiftbysundell.com/articles/model-controllers-in-swift/
 struct MealsModelController {
     
 }
