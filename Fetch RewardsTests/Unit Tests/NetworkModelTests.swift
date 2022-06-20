@@ -26,7 +26,6 @@ class NetworkModelTests: XCTestCase {
     }
     
     //Citation: https://www.hackingwithswift.com/articles/153/how-to-test-ios-networking-code-the-easy-way
-    #warning("this test case passes but I haven't even written code so it should be failing in the first place so I need to look into that")
     func test_makeRequest() throws {
         //expected data
         let inputURL = try XCTUnwrap(URL(string: "https://www.apple.com"))
@@ -36,15 +35,18 @@ class NetworkModelTests: XCTestCase {
         //setup mock
         URLProtocolMock.testURLs = input
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [URLProtocolMock.self]
+        config.protocolClasses = [URLProtocolMock.self] //I'm using testURLs as static b/c we do not create an instance of URLProtocolMock but we still need to edit testURLs for testing purpose
         let urlSession = URLSession(configuration: config)
         sut = NetworkModel(with: urlSession)
         
         //make request
+        let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
         sut.makeURLRequest(at: inputURL){ actualData, error in
             XCTAssertNil(error)
             XCTAssertEqual(actualData, expectedData)
+            networkResponseExpectation.fulfill()
         }
+        wait(for: [networkResponseExpectation], timeout: 2)
     }
 }
 
