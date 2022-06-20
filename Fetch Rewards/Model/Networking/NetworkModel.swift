@@ -9,6 +9,15 @@ import Foundation
 
 //Inspiration: https://www.swiftbysundell.com/articles/creating-generic-networking-apis-in-swift/
 struct NetworkModel {
+    
+    init(with session: URLSession = URLSession.shared){
+        
+    }
+    
+    func makeURLRequest(at url: URL, completion: @escaping ((Data?, Error?) -> Void)){
+        
+    }
+    
     func getURL(for endpoint: EndPoint) -> URL? {
         var urlComponent = URLComponents()
         urlComponent.host = endpoint.host
