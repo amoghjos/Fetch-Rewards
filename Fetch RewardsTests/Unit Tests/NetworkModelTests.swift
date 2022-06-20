@@ -52,14 +52,17 @@ class NetworkModelTests: XCTestCase {
         
         //act: make request
         let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
-        sut.makeGETRequest(at: inputURL){ actualData, error in
-            //assert
-            XCTAssertNil(error)
-            XCTAssertEqual(actualData?.name, expectedMeal.name)
-            XCTAssertEqual(actualData?.id, expectedMeal.id)
-            XCTAssertEqual(actualData?.imageURL, expectedMeal.imageURL)
-            networkResponseExpectation.fulfill()
+        sut.makeGETRequest(at: inputURL) { (res: Result<Meal, Error> ) in
+            
         }
+//        sut.makeGETRequest(at: inputURL){ actualData: Meal, error in
+//            //assert
+//            XCTAssertNil(error)
+//            XCTAssertEqual(actualData?.name, expectedMeal.name)
+//            XCTAssertEqual(actualData?.id, expectedMeal.id)
+//            XCTAssertEqual(actualData?.imageURL, expectedMeal.imageURL)
+//            networkResponseExpectation.fulfill()
+//        }
         wait(for: [networkResponseExpectation], timeout: 2)
     }
 }
