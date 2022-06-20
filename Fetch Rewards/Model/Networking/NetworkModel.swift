@@ -14,8 +14,8 @@ struct NetworkModel {
         
     }
     
-    func makeURLRequest(at url: URL, completion: @escaping ((Data?, Error?) -> Void)){
-        
+    func makeGETRequest(at url: URL, completion: @escaping (([String:String]?, Error?) -> Void)){
+        completion(["ok":"good work boys :)"], nil)
     }
     
     func getURL(for endpoint: EndPoint) -> URL? {

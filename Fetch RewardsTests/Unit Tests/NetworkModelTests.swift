@@ -25,32 +25,43 @@ class NetworkModelTests: XCTestCase {
         XCTAssertEqual(expectedURL, actualURL)
     }
     
-    //Citation: https://www.hackingwithswift.com/articles/153/how-to-test-ios-networking-code-the-easy-way
-    func test_makeRequest() throws {
-        //expected data
-        let inputURL = try XCTUnwrap(URL(string: "https://www.apple.com"))
-        let expectedData = try XCTUnwrap("Apple".data(using: .utf8))
-        let input = [inputURL:expectedData]
+    func test_makeGETRequest() throws {
         
-        //setup mock
+        //expected result
+        let expectedJSONDict = ["name":"Durian","points":"600","description":"A fruit with a distinctive scent."]
+        
+        //arrange input
+        let inputJSONData = """
+        {
+            "name": "Durian",
+            "points": 600,
+            "description": "A fruit with a distinctive scent."
+        }
+        """.data(using: .utf8)!
+        let inputURL = try XCTUnwrap(URL(string: "https://www.apple.com")) //It can be any URL
+        let input = [inputURL:inputJSONData]
+        
+        //arrange mock
         URLProtocolMock.testURLs = input
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [URLProtocolMock.self] //I'm using testURLs as static b/c we do not create an instance of URLProtocolMock but we still need to edit testURLs for testing purpose
+        config.protocolClasses = [URLProtocolMock.self]
         let urlSession = URLSession(configuration: config)
         sut = NetworkModel(with: urlSession)
         
         //make request
         let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
-        sut.makeURLRequest(at: inputURL){ actualData, error in
+        sut.makeGETRequest(at: inputURL){ actualData, error in
             XCTAssertNil(error)
-            XCTAssertEqual(actualData, expectedData)
+            XCTAssertEqual(actualData, expectedJSONDict)
             networkResponseExpectation.fulfill()
         }
         wait(for: [networkResponseExpectation], timeout: 2)
     }
 }
 
+//Citation: https://www.hackingwithswift.com/articles/153/how-to-test-ios-networking-code-the-easy-way
 fileprivate class URLProtocolMock: URLProtocol {
+    //I'm using testURLs as static b/c we do not create an instance of URLProtocolMock but we still need to edit testURLs for testing purpose
     static var testURLs = [URL?: Data]()
     
     override class func canInit(with request: URLRequest) -> Bool {
