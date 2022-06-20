@@ -9,5 +9,7 @@ import Foundation
 
 //Inspiration: https://www.swiftbysundell.com/articles/model-controllers-in-swift/
 struct MealsModelController {
-    
+    func getMeals(for category: MealCategory) -> [Meal] {
+        return []
+    }
 }

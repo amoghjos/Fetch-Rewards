@@ -19,7 +19,7 @@ class MealsModelControllerTests: XCTestCase {
         sut = nil
     }
     
-    func test01() {
-        
+    func test_getMeals_for_dessert_category() {
+        let meals = sut.getMeals(for: .dessert)
     }
 }

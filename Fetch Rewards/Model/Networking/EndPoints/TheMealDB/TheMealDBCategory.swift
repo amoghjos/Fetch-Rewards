@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum MealsCategory: String {
+enum TheMealDBCategory: String {
     case dessert = "Dessert"
 }
