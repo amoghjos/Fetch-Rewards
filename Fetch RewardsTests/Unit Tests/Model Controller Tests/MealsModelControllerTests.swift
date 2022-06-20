@@ -12,7 +12,7 @@ class MealsModelControllerTests: XCTestCase {
     var sut: MealsModelController!
     
     override func setUpWithError() throws {
-        sut = MealsModelController()
+//        sut = MealsModelController()
     }
     
     override func tearDownWithError() throws {
@@ -20,6 +20,5 @@ class MealsModelControllerTests: XCTestCase {
     }
     
     func test_getMeals_for_dessert_category() {
-        let meals = sut.getMeals(for: .dessert)
     }
 }

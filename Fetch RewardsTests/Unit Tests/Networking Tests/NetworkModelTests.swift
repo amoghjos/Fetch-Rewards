@@ -25,7 +25,7 @@ class NetworkModelTests: XCTestCase {
         XCTAssertEqual(expectedURL, actualURL)
     }
     
-    func test_makeGETRequest() throws {
+    func test_makeRequest() throws {
         //arrange input
         let inputMealJSONData = """
         {
