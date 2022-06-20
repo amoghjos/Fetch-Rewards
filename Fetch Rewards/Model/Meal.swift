@@ -9,8 +9,8 @@ import Foundation
 
 struct Meal: Decodable {
     let name: String
-    let id: Int
-    let imageURL: URL
+    let id: String
+    let imageURL: String
     
     enum CodingKeys: String, CodingKey {
         case name = "strMeal"

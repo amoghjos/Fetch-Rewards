@@ -25,21 +25,23 @@ class NetworkModelTests: XCTestCase {
         XCTAssertEqual(expectedURL, actualURL)
     }
     
-    func test_makeGETRequest() throws {
+    func test_makeGETRequest_for_meal_model() throws {
         
         //expected result
-        let expectedJSONDict = ["name":"Durian","points":"600","description":"A fruit with a distinctive scent."]
+        let expectedMeal = Meal(name: "Apam balik",
+                                id: "53049",
+                                imageURL: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
         
         //arrange input
-        let inputJSONData = """
+        let inputMealJSONData = """
         {
-            "name": "Durian",
-            "points": 600,
-            "description": "A fruit with a distinctive scent."
+        "strMeal": "Apam balik",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
+        "idMeal": "53049"
         }
         """.data(using: .utf8)!
         let inputURL = try XCTUnwrap(URL(string: "https://www.apple.com")) //It can be any URL
-        let input = [inputURL:inputJSONData]
+        let input = [inputURL:inputMealJSONData]
         
         //arrange mock
         URLProtocolMock.testURLs = input
@@ -48,11 +50,14 @@ class NetworkModelTests: XCTestCase {
         let urlSession = URLSession(configuration: config)
         sut = NetworkModel(with: urlSession)
         
-        //make request
+        //act: make request
         let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
         sut.makeGETRequest(at: inputURL){ actualData, error in
+            //assert
             XCTAssertNil(error)
-            XCTAssertEqual(actualData, expectedJSONDict)
+            XCTAssertEqual(actualData?.name, expectedMeal.name)
+            XCTAssertEqual(actualData?.id, expectedMeal.id)
+            XCTAssertEqual(actualData?.imageURL, expectedMeal.imageURL)
             networkResponseExpectation.fulfill()
         }
         wait(for: [networkResponseExpectation], timeout: 2)

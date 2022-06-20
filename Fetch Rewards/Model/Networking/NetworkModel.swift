@@ -10,12 +10,18 @@ import Foundation
 //Inspiration: https://www.swiftbysundell.com/articles/creating-generic-networking-apis-in-swift/
 struct NetworkModel {
     
+    var session: URLSession
+    
     init(with session: URLSession = URLSession.shared){
-        
+        self.session = session
     }
     
-    func makeGETRequest(at url: URL, completion: @escaping (([String:String]?, Error?) -> Void)){
-        completion(["ok":"good work boys :)"], nil)
+    func makeGETRequest(at url: URL, completion: @escaping ((Meal?, Error?) -> Void)){
+        let task = session.dataTask(with: url) { data, response, error in
+            let responseObject = try? JSONDecoder().decode(Meal.self, from: data!)
+            completion(responseObject, nil)
+        }
+        task.resume()
     }
     
     func getURL(for endpoint: EndPoint) -> URL? {
