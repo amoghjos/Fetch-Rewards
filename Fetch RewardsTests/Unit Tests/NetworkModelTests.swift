@@ -26,12 +26,6 @@ class NetworkModelTests: XCTestCase {
     }
     
     func test_makeGETRequest_for_meal_model() throws {
-        
-        //expected result
-        let expectedMeal = Meal(name: "Apam balik",
-                                id: "53049",
-                                imageURL: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
-        
         //arrange input
         let inputMealJSONData = """
         {
@@ -52,46 +46,15 @@ class NetworkModelTests: XCTestCase {
         
         //act: make request
         let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
-        sut.makeGETRequest(at: inputURL) { (res: Result<Meal, Error> ) in
-            
+        sut.makeGETRequest(at: inputURL){ (actualData: Meal?, error) in
+            //assert
+            XCTAssertNil(error)
+            XCTAssertEqual(actualData?.name, "Apam balik")
+            XCTAssertEqual(actualData?.id, "53049")
+            XCTAssertEqual(actualData?.imageURL, "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
+            networkResponseExpectation.fulfill()
         }
-//        sut.makeGETRequest(at: inputURL){ actualData: Meal, error in
-//            //assert
-//            XCTAssertNil(error)
-//            XCTAssertEqual(actualData?.name, expectedMeal.name)
-//            XCTAssertEqual(actualData?.id, expectedMeal.id)
-//            XCTAssertEqual(actualData?.imageURL, expectedMeal.imageURL)
-//            networkResponseExpectation.fulfill()
-//        }
-        wait(for: [networkResponseExpectation], timeout: 2)
+        wait(for: [networkResponseExpectation], timeout: 0.1)
     }
 }
 
-//Citation: https://www.hackingwithswift.com/articles/153/how-to-test-ios-networking-code-the-easy-way
-fileprivate class URLProtocolMock: URLProtocol {
-    //I'm using testURLs as static b/c we do not create an instance of URLProtocolMock but we still need to edit testURLs for testing purpose
-    static var testURLs = [URL?: Data]()
-    
-    override class func canInit(with request: URLRequest) -> Bool {
-        return true
-    }
-    
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        return request
-    }
-    
-    override func startLoading() {
-        
-        if let url = request.url {
-            
-            if let data = URLProtocolMock.testURLs[url] {
-                
-                self.client?.urlProtocol(self, didLoad: data)
-            }
-        }
-        
-        self.client?.urlProtocolDidFinishLoading(self)
-    }
-    
-    override func stopLoading() { }
-}

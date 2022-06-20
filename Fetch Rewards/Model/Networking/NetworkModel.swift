@@ -16,10 +16,10 @@ struct NetworkModel {
         self.session = session
     }
     
-    func makeGETRequest<T:Codable>(at url: URL, completion: @escaping (Result<T,Error>) -> Void){
+    func makeGETRequest<T:Codable>(at url: URL, completion: @escaping ((T?, Error?) -> Void)){
         let task = session.dataTask(with: url) { data, response, error in
             let responseObject = try? JSONDecoder().decode(T.self, from: data!)
-            completion(.success(responseObject!))
+            completion(responseObject, nil)
         }
         task.resume()
     }

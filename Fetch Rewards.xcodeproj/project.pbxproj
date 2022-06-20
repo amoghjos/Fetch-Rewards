@@ -24,6 +24,7 @@
 		CDBA5DB4285FA77F00306350 /* StubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB3285FA77F00306350 /* StubEndPoint.swift */; };
 		CDBA5DB6285FBA4A00306350 /* TheMealDBNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */; };
 		CDBA5DB8285FBA9700306350 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB7285FBA9700306350 /* Meal.swift */; };
+		CDBBF5202860FFEE0046DC51 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF51F2860FFEE0046DC51 /* URLProtocolMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		CDBA5DB3285FA77F00306350 /* StubEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubEndPoint.swift; sourceTree = "<group>"; };
 		CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkResponse.swift; sourceTree = "<group>"; };
 		CDBA5DB7285FBA9700306350 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		CDBBF51F2860FFEE0046DC51 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBA5DB3285FA77F00306350 /* StubEndPoint.swift */,
+				CDBBF51F2860FFEE0046DC51 /* URLProtocolMock.swift */,
 			);
 			path = "Stubs+Mocks";
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBBF5202860FFEE0046DC51 /* URLProtocolMock.swift in Sources */,
 				CD495F1E2859239D007C24E4 /* NetworkModelTests.swift in Sources */,
 				CDBA5DB4285FA77F00306350 /* StubEndPoint.swift in Sources */,
 				CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */,
