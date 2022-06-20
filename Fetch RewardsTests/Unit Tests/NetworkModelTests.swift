@@ -46,7 +46,7 @@ class NetworkModelTests: XCTestCase {
         
         //act: make request
         let networkResponseExpectation = XCTestExpectation(description: "Receieve data from makeURLRequest")
-        sut.makeGETRequest(at: inputURL){ (actualData: MealStub?, error) in
+        sut.makeRequest(at: inputURL){ (actualData: MealStub?, error) in
             //assert
             XCTAssertNil(error)
             XCTAssertEqual(actualData?.strMeal, "Apam balik")

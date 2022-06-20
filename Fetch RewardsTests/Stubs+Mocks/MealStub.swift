@@ -7,7 +7,7 @@
 
 import Foundation
 
-//Used for testing makeGETRequest
+//Used for testing makeRequest
 class MealStub: Codable {
     let strMeal: String
     let strMealThumb: String
