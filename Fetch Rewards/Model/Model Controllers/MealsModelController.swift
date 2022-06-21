@@ -9,20 +9,21 @@ import Foundation
 
 //Inspiration: https://www.swiftbysundell.com/articles/model-controllers-in-swift/
 struct MealsModelController {
+    private let mealsStorage: MealsStorage
     
-    let networkModel: NetworkModel
-    
-    init(networkModel: NetworkModel){
-        self.networkModel = networkModel
+    init(using mealsStorageMock: MealsStorage){
+        self.mealsStorage = mealsStorageMock
     }
     
     func getMeals(for category: MealCategory) -> [Meal] {
-//        let dessertEndPoint = EndPoints.TheMealDB.getMeals(category: .dessert)
-//        let url = networkModel.getURL(for: dessertEndPoint)!
-//        typealias TheMealDBResponse = TheMealDBNetworkResponse<[MealNetworkResponse]>?
-//        networkModel.makeRequest(at: url) { (response: TheMealDBResponse, error) in
-//            print(response?.meals)
-//        }
-        return []
+        return mealsStorage.getMeals(for: category)
+            .filter{
+                //remove any empty names
+                !$0.name.isEmpty
+            }
+            .sorted {
+                //sort alphabetically
+                $0.name.lowercased() < $1.name.lowercased()
+            }
     }
 }
