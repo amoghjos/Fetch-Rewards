@@ -17,7 +17,7 @@
 		CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F24285924E5007C24E4 /* NetworkModel.swift */; };
 		CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */; };
 		CD495F2928598727007C24E4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2828598727007C24E4 /* EndPoint.swift */; };
-		CD495F2D285987EF007C24E4 /* TheMealDBEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDBEndPoints.swift */; };
+		CD495F2D285987EF007C24E4 /* TheMealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDB.swift */; };
 		CDBA5DAB285F94F100306350 /* TheMealDBCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */; };
 		CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */; };
 		CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB0285FA49C00306350 /* EndPoints.swift */; };
@@ -31,6 +31,8 @@
 		CDBBF52D2861228B0046DC51 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF52C2861228B0046DC51 /* Meal.swift */; };
 		CDBBF52F286128920046DC51 /* MealCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF52E286128920046DC51 /* MealCategory.swift */; };
 		CDBBF53128613DA80046DC51 /* MealsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF53028613DA80046DC51 /* MealsStorage.swift */; };
+		CDBBF535286145E40046DC51 /* TheMealDBNetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF534286145E40046DC51 /* TheMealDBNetworkEngine.swift */; };
+		CDBBF537286146950046DC51 /* TheMealDBNetworkEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF536286146950046DC51 /* TheMealDBNetworkEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,7 @@
 		CD495F24285924E5007C24E4 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealsForDessertCategoryTests.swift; sourceTree = "<group>"; };
 		CD495F2828598727007C24E4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		CD495F2C285987EF007C24E4 /* TheMealDBEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPoints.swift; sourceTree = "<group>"; };
+		CD495F2C285987EF007C24E4 /* TheMealDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDB.swift; sourceTree = "<group>"; };
 		CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBCategory.swift; sourceTree = "<group>"; };
 		CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealDetailsForIDTests.swift; sourceTree = "<group>"; };
 		CDBA5DB0285FA49C00306350 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -71,6 +73,8 @@
 		CDBBF52C2861228B0046DC51 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		CDBBF52E286128920046DC51 /* MealCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategory.swift; sourceTree = "<group>"; };
 		CDBBF53028613DA80046DC51 /* MealsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStorage.swift; sourceTree = "<group>"; };
+		CDBBF534286145E40046DC51 /* TheMealDBNetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkEngine.swift; sourceTree = "<group>"; };
+		CDBBF536286146950046DC51 /* TheMealDBNetworkEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,8 +193,8 @@
 		CDBA5DA9285F94DD00306350 /* TheMealDB */ = {
 			isa = PBXGroup;
 			children = (
-				CD495F2C285987EF007C24E4 /* TheMealDBEndPoints.swift */,
-				CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */,
+				CDBBF533286145A30046DC51 /* Network Engine */,
+				CDBBF5322861458E0046DC51 /* EndPoints */,
 				CDBBF52328611DA20046DC51 /* Network Response */,
 			);
 			path = TheMealDB;
@@ -208,6 +212,7 @@
 		CDBA5DAD285F9C5800306350 /* TheMealDBEndPointTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDBBF536286146950046DC51 /* TheMealDBNetworkEngineTests.swift */,
 				CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */,
 				CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */,
 			);
@@ -266,6 +271,23 @@
 				CDBBF52E286128920046DC51 /* MealCategory.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CDBBF5322861458E0046DC51 /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+				CD495F2C285987EF007C24E4 /* TheMealDB.swift */,
+				CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */,
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		CDBBF533286145A30046DC51 /* Network Engine */ = {
+			isa = PBXGroup;
+			children = (
+				CDBBF534286145E40046DC51 /* TheMealDBNetworkEngine.swift */,
+			);
+			path = "Network Engine";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,11 +394,12 @@
 				CDBA5DB8285FBA9700306350 /* MealNetworkResponse.swift in Sources */,
 				CDBA5DAB285F94F100306350 /* TheMealDBCategory.swift in Sources */,
 				CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */,
+				CDBBF535286145E40046DC51 /* TheMealDBNetworkEngine.swift in Sources */,
 				CDBA5DB6285FBA4A00306350 /* TheMealDBNetworkResponse.swift in Sources */,
 				CDBBF52D2861228B0046DC51 /* Meal.swift in Sources */,
 				CD495F0428591CC3007C24E4 /* ViewController.swift in Sources */,
 				CD495F2928598727007C24E4 /* EndPoint.swift in Sources */,
-				CD495F2D285987EF007C24E4 /* TheMealDBEndPoints.swift in Sources */,
+				CD495F2D285987EF007C24E4 /* TheMealDB.swift in Sources */,
 				CD495F0028591CC3007C24E4 /* AppDelegate.swift in Sources */,
 				CDBBF52628611DD00046DC51 /* MealsModelController.swift in Sources */,
 				CDBBF53128613DA80046DC51 /* MealsStorage.swift in Sources */,
@@ -397,6 +420,7 @@
 				CDBBF52A286121880046DC51 /* MealsModelControllerTests.swift in Sources */,
 				CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */,
 				CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */,
+				CDBBF537286146950046DC51 /* TheMealDBNetworkEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

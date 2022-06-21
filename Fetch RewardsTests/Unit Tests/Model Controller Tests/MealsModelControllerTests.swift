@@ -38,7 +38,7 @@ class MealsModelControllerTests: XCTestCase {
                           Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
                           Meal(name: "Bug", image: UIImage(systemName: "ladybug")!, id: 04)
                   ]
-        let mealsStorageMock = MealsStorageMock(inputMeals)
+        let mealsStorageMock = MealsStorageStub(inputMeals)
         sut = MealsModelController(using: mealsStorageMock)
         
         let expectedMeals = [Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
@@ -62,7 +62,7 @@ class MealsModelControllerTests: XCTestCase {
                           Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
                           Meal(name: "Bug", image: UIImage(systemName: "ladybug")!, id: 04)
                   ]
-        let mealsStorageMock = MealsStorageMock(inputMeals)
+        let mealsStorageMock = MealsStorageStub(inputMeals)
         sut = MealsModelController(using: mealsStorageMock)
         
         let expectedMeals = [Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
@@ -77,7 +77,7 @@ class MealsModelControllerTests: XCTestCase {
     }
 }
 
-fileprivate class MealsStorageMock: MealsStorage {
+fileprivate class MealsStorageStub: MealsStorage {
     
     private let meals: [Meal]
     
