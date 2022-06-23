@@ -19,7 +19,7 @@ class MealsModelControllerTests: XCTestCase {
         sut = nil
     }
     
-    func compareExpectedToActualMeals(_ expected: [Meal],_ actual: [Meal]) {
+    private func compareExpectedToActualMeals(_ expected: [Meal],_ actual: [Meal]) {
         XCTAssertEqual(expected.count, actual.count)
         
         //if the number elements are equal, then are they sorted alphabetically?
@@ -30,6 +30,16 @@ class MealsModelControllerTests: XCTestCase {
             XCTAssertEqual(expectedMeal.image, actualMeal.image)
             XCTAssertEqual(expectedMeal.id, actualMeal.id)
         }
+    }
+    
+    private func makeRequestToGetActualMeals(_ expectedMeals:[Meal]) {
+        let expectation = expectation(description: "Expectation for meals")
+        sut.getMeals(for: .dessert){ actualMeals in
+            //assert
+            self.compareExpectedToActualMeals(expectedMeals, actualMeals)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func test_getMeals_for_dessert_category_alphabetically_sorted() {
@@ -49,10 +59,7 @@ class MealsModelControllerTests: XCTestCase {
         ]
         
         //act
-        let actualMeals = sut.getMeals(for: .dessert)
-        
-        //assert
-        compareExpectedToActualMeals(expectedMeals, actualMeals)
+        makeRequestToGetActualMeals(expectedMeals)
     }
     
     
@@ -71,25 +78,19 @@ class MealsModelControllerTests: XCTestCase {
         ]
         
         //act
-        let actualMeals = sut.getMeals(for: .dessert)
-        
-        //assert
-        compareExpectedToActualMeals(expectedMeals, actualMeals)
+        makeRequestToGetActualMeals(expectedMeals)
     }
 }
 
 fileprivate class MealsStorageStub: MealsStorage {
+    func getMeals(for category: MealCategory, completion: @escaping (([Meal]) -> Void)) {
+        completion(meals)
+    }
+    
     
     private let meals: [Meal]
     
     init(_ meals: [Meal]){
         self.meals = meals
-    }
-    
-    func getMeals(for category: MealCategory) -> [Meal] {
-        switch category {
-        case .dessert:
-            return meals
-        }
     }
 }

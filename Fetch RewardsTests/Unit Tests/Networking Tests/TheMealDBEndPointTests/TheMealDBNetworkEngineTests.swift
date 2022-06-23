@@ -23,6 +23,8 @@ class TheMealDBNetworkEngineTests: XCTestCase {
         //arrange input data
         let json = """
         {
+        "meals": [
+        {
         "strMeal": "Apam balik",
         "strMealThumb": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
         "idMeal": "53049"
@@ -36,8 +38,10 @@ class TheMealDBNetworkEngineTests: XCTestCase {
         "strMeal": "Apple Frangipan Tart",
         "strMealThumb": "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg",
         "idMeal": "52768"
+        }]
         }
         """.data(using: .utf8)!
+        
         let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")!
         let inputURL = [url:json]
         
@@ -61,17 +65,22 @@ class TheMealDBNetworkEngineTests: XCTestCase {
         ]
                 
         //act
-        let actualMeals = sut.getMeals(for: .dessert)
-        
-        //assert
-        XCTAssertEqual(expectedMeals.count, actualMeals.count)
-        
-        for i in 0..<expectedMeals.count {
-            let expectedMeal = expectedMeals[i]
-            let actualMeal = actualMeals[i]
-            XCTAssertEqual(expectedMeal.id, actualMeal.id)
-            XCTAssertEqual(expectedMeal.name, actualMeal.name)
-            XCTAssertTrue(expectedMeal.image.isEqual(actualMeal.image))
+        let expectation = expectation(description: "expected meals")
+        sut.getMeals(for: .dessert){ actualMeals in
+            //assert
+            XCTAssertEqual(expectedMeals.count, actualMeals.count)
+            
+            for i in 0..<expectedMeals.count {
+                let expectedMeal = expectedMeals[i]
+                let actualMeal = actualMeals[i]
+                XCTAssertEqual(expectedMeal.id, actualMeal.id)
+                XCTAssertEqual(expectedMeal.name, actualMeal.name)
+                XCTAssertTrue(expectedMeal.image.isEqual(actualMeal.image))
+            }
+            
+            expectation.fulfill()
         }
+        
+        wait(for: [expectation], timeout: 0.1)
     }
 }
