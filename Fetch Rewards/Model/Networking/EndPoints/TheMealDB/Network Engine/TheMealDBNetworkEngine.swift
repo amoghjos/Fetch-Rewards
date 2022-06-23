@@ -10,14 +10,14 @@ import UIKit
 
 //TheMealDBNetworkEngine is responsible for putting everything together. It uses the end point to construct URL and makes network requests using NetworkModel using NetworkResponse. It also happens to confirm to MealsStorage protocol and hence, currently, provides storage for Model Controllers
 struct TheMealDBNetworkEngine: MealsStorage {
-    
+
     private let networkModel: NetworkModel
     
     init(networkModel: NetworkModel = NetworkModel()){
         self.networkModel = networkModel
     }
     
-    func getMeals(for category: MealCategory) -> [Meal] {
+    func getMeals(for category: MealCategory, completion: @escaping (([Meal]) -> Void)) {
         var meals = [Meal]()
         
         switch category {
@@ -37,9 +37,8 @@ struct TheMealDBNetworkEngine: MealsStorage {
                     let meal = Meal(name: responseMeal.name, image: image, id: Int(responseMeal.id)!)
                     meals.append(meal)
                 }
+                completion(meals)
             }
         }
-        
-        return meals
     }
 }

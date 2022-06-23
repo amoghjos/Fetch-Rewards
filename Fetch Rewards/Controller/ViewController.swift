@@ -8,14 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let model = MealsModelController()
-        let meals = model.getMeals(for: .dessert)
-        print(meals)
+        model.getMeals(for: .dessert){ meals in
+            print(meals)
+            
+        }
     }
-
-
 }
 

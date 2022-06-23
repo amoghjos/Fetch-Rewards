@@ -15,9 +15,9 @@ struct MealsModelController {
         self.mealsStorage = mealsStorageMock
     }
     
-    func getMeals(for category: MealCategory) -> [Meal] {
-        return mealsStorage.getMeals(for: category)
-            .filter{
+    func getMeals(for category: MealCategory, completion: @escaping ([Meal]) -> Void ) {
+        mealsStorage.getMeals(for: category) { meals in
+            let filteredMeals = meals.filter{
                 //remove any empty names
                 !$0.name.isEmpty
             }
@@ -25,5 +25,7 @@ struct MealsModelController {
                 //sort alphabetically
                 $0.name.lowercased() < $1.name.lowercased()
             }
+            completion(filteredMeals)
+        }
     }
 }
