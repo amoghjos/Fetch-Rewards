@@ -29,6 +29,7 @@ class MealsModelControllerTests: XCTestCase {
             XCTAssertEqual(expectedMeal.name, actualMeal.name)
             XCTAssertEqual(expectedMeal.image, actualMeal.image)
             XCTAssertEqual(expectedMeal.id, actualMeal.id)
+        }
     }
     
     func test_getMeals_for_dessert_category_alphabetically_sorted() {
@@ -37,7 +38,7 @@ class MealsModelControllerTests: XCTestCase {
                           Meal(name: "Hare", image: UIImage(systemName: "hare")!, id: 02),
                           Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
                           Meal(name: "Bug", image: UIImage(systemName: "ladybug")!, id: 04)
-                  ]
+        ]
         let mealsStorageMock = MealsStorageStub(inputMeals)
         sut = MealsModelController(using: mealsStorageMock)
         
@@ -45,15 +46,15 @@ class MealsModelControllerTests: XCTestCase {
                              Meal(name: "Bug", image: UIImage(systemName: "ladybug")!, id: 04),
                              Meal(name: "Hare", image: UIImage(systemName: "hare")!, id: 02),
                              Meal(name: "Tortoise", image: UIImage(systemName: "tortoise")!, id: 01)
-                     ]
+        ]
         
         //act
         let actualMeals = sut.getMeals(for: .dessert)
         
         //assert
         compareExpectedToActualMeals(expectedMeals, actualMeals)
-        }
     }
+    
     
     func test_getMeals_for_dessert_category_remove_empty_names() {
         //arrange
@@ -61,13 +62,13 @@ class MealsModelControllerTests: XCTestCase {
                           Meal(name: "", image: UIImage(systemName: "hare")!, id: 02),
                           Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
                           Meal(name: "Bug", image: UIImage(systemName: "ladybug")!, id: 04)
-                  ]
+        ]
         let mealsStorageMock = MealsStorageStub(inputMeals)
         sut = MealsModelController(using: mealsStorageMock)
         
         let expectedMeals = [Meal(name: "Ant", image: UIImage(systemName: "ant")!, id: 03),
                              Meal(name: "Bug", image: UIImage(systemName: "ladybug")!, id: 04)
-                     ]
+        ]
         
         //act
         let actualMeals = sut.getMeals(for: .dessert)
