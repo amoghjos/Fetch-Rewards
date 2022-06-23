@@ -19,7 +19,9 @@ struct TheMealDBNetworkEngine: MealsStorage {
     
     func getMeals(for category: MealCategory) -> [Meal] {
         var meals = [Meal]()
+        
         switch category {
+            
         case .dessert:
             let endPoint = EndPoints.TheMealDB.getMeals(category: .dessert)
             let url = networkModel.getURL(for: endPoint)!
@@ -27,6 +29,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
             typealias TheMealDBResponse = TheMealDBNetworkResponse<[MealNetworkResponse]>?
             
             networkModel.makeRequest(at: url) { (response:TheMealDBResponse, error) in
+                //TODO: Instead of force unwrapping response, consider modifying the function so that it throws an error when response is invalid
                 for responseMeal in response!.meals {
                     #warning("get image from the url")
                     let image = UIImage(systemName: "tornado")!
