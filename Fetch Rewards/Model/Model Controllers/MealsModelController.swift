@@ -11,7 +11,7 @@ import Foundation
 struct MealsModelController {
     private let mealsStorage: MealsStorage
     
-    init(using mealsStorageMock: MealsStorage){
+    init(using mealsStorageMock: MealsStorage = TheMealDBNetworkEngine()){
         self.mealsStorage = mealsStorageMock
     }
     

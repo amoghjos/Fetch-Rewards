@@ -17,6 +17,18 @@ struct TheMealDBNetworkEngine: MealsStorage {
     }
     
     func getMeals(for category: MealCategory) -> [Meal] {
+        switch category {
+        case .dessert:
+            let endPoint = EndPoints.TheMealDB.getMeals(category: .dessert)
+            let url = networkModel.getURL(for: endPoint)!
+            
+            typealias TheMealDBResponse = TheMealDBNetworkResponse<[MealNetworkResponse]>?
+            
+            networkModel.makeRequest(at: url) { (response:TheMealDBResponse, error) in
+                print(response)
+            }
+        }
+        
         return []
     }
 }
