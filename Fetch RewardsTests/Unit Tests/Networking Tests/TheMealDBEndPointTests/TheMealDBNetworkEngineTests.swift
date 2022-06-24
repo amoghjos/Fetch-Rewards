@@ -19,9 +19,10 @@ class TheMealDBNetworkEngineTests: XCTestCase {
         sut = nil
     }
     
-    func test_getMeals() {
+    func test_getMeals() throws {
         //arrange input data
-        let json = """
+        let json = try XCTUnwrap(
+        """
         {
         "meals": [
         {
@@ -40,9 +41,9 @@ class TheMealDBNetworkEngineTests: XCTestCase {
         "idMeal": "52768"
         }]
         }
-        """.data(using: .utf8)!
+        """.data(using: .utf8))
         
-        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")!
+        let url = try XCTUnwrap (URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert"))
         let inputURL = [url:json]
         
         //setup mock data to send input
@@ -55,9 +56,9 @@ class TheMealDBNetworkEngineTests: XCTestCase {
         sut = TheMealDBNetworkEngine(networkModel: stubNetworkModel)
         
         //arrange expected data
-        let image1 = UIImage(named: "Apam balik")!
-        let image2 = UIImage(named: "Apple & Blackberry Crumble")!
-        let image3 = UIImage(named: "Apple Frangipan Tart")!
+        let image1 = try XCTUnwrap(UIImage(named: "Apam balik"))
+        let image2 = try XCTUnwrap(UIImage(named: "Apple & Blackberry Crumble"))
+        let image3 = try XCTUnwrap(UIImage(named: "Apple Frangipan Tart"))
         let expectedMeals = [
             Meal(name: "Apam balik", image: image1, id: 53049),
             Meal(name: "Apple & Blackberry Crumble", image: image2, id: 52893),

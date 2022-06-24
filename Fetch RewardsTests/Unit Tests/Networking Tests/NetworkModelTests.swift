@@ -27,13 +27,14 @@ class NetworkModelTests: XCTestCase {
     
     func test_makeRequest() throws {
         //arrange input
-        let inputMealJSONData = """
+        let inputMealJSONData = try XCTUnwrap(
+        """
         {
         "strMeal": "Apam balik",
         "strMealThumb": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
         "idMeal": "53049"
         }
-        """.data(using: .utf8)!
+        """.data(using: .utf8))
         let inputURL = try XCTUnwrap(URL(string: "https://www.apple.com")) //It can be any URL
         let input = [inputURL:inputMealJSONData]
         
