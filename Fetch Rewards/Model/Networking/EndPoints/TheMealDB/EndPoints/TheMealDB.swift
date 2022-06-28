@@ -10,7 +10,7 @@ import Foundation
 extension EndPoints {
     enum TheMealDB: EndPoint {
         
-        case getMeals(category: MealsCategory)
+        case getMeals(category: TheMealDBCategory)
         case getMealDetails(id: Int)
 
         var scheme: String {
