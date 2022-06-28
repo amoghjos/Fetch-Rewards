@@ -9,12 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var mealsModelController = MealsModelController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let model = MealsModelController()
-        model.getMeals(for: .dessert){ meals in
+        mealsModelController.getMeals(for: .dessert){ meals in
             print(meals)
-            
         }
     }
 }
