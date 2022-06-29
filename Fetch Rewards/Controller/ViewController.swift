@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     
     var mealsModelController = MealsModelController()
     
@@ -17,8 +18,9 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,4 +28,3 @@ extension ViewController: UITableViewDataSource {
         return tableView.dequeueReusableCell(withIdentifier: "DessetCell")!
     }
 }
-
