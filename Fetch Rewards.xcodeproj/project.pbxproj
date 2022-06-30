@@ -10,6 +10,7 @@
 		CD2B9DD5286D84C700C2001A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DD4286D84C700C2001A /* Constants.swift */; };
 		CD2B9DD7286D84F400C2001A /* DessetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DD6286D84F400C2001A /* DessetTableViewCell.swift */; };
 		CD2B9DDB286D8CDB00C2001A /* DessertDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DDA286D8CDB00C2001A /* DessertDetailsViewController.swift */; };
+		CD2B9DDD286D913700C2001A /* MealDetailsNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DDC286D913700C2001A /* MealDetailsNetworkResponse.swift */; };
 		CD495F0028591CC3007C24E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495EFF28591CC3007C24E4 /* AppDelegate.swift */; };
 		CD495F0228591CC3007C24E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F0128591CC3007C24E4 /* SceneDelegate.swift */; };
 		CD495F0428591CC3007C24E4 /* DessertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F0328591CC3007C24E4 /* DessertsViewController.swift */; };
@@ -52,6 +53,7 @@
 		CD2B9DD4286D84C700C2001A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD2B9DD6286D84F400C2001A /* DessetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessetTableViewCell.swift; sourceTree = "<group>"; };
 		CD2B9DDA286D8CDB00C2001A /* DessertDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsViewController.swift; sourceTree = "<group>"; };
+		CD2B9DDC286D913700C2001A /* MealDetailsNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsNetworkResponse.swift; sourceTree = "<group>"; };
 		CD495EFC28591CC3007C24E4 /* Fetch Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Rewards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD495EFF28591CC3007C24E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD495F0128591CC3007C24E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				CDBA5DB5285FBA4A00306350 /* TheMealDBNetworkResponse.swift */,
 				CDBA5DB7285FBA9700306350 /* MealNetworkResponse.swift */,
+				CD2B9DDC286D913700C2001A /* MealDetailsNetworkResponse.swift */,
 			);
 			path = "Network Response";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */,
 				CDBBF52F286128920046DC51 /* MealCategory.swift in Sources */,
 				CD495F0228591CC3007C24E4 /* SceneDelegate.swift in Sources */,
+				CD2B9DDD286D913700C2001A /* MealDetailsNetworkResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
