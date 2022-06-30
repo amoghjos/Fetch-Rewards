@@ -32,7 +32,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
                 //TODO: Instead of force unwrapping response, consider modifying the function so that it throws an error when response is invalid
                 for responseMeal in response!.meals {
                     #warning("get image from the url")
-                    let image = UIImage(systemName: "tornado")!
+                    let image = UIImage(named: "Apple Frangipan Tart")!
                     
                     let meal = Meal(name: responseMeal.name, image: image, id: Int(responseMeal.id)!)
                     meals.append(meal)
