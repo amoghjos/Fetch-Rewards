@@ -25,6 +25,6 @@ extension DessertsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCell(withIdentifier: "DessetCell")!
+        return tableView.dequeueReusableCell(withIdentifier: K.Identifiers.dessetTableViewCell)!
     }
 }
