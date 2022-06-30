@@ -16,6 +16,10 @@ class DessetTableViewCell: UITableViewCell {
         
         //configure table view cell
         backgroundImage.layer.cornerRadius = 10
-
+    }
+    
+    func setUp(from meal: Meal) {
+        backgroundImage.image = meal.image
+        dessertName.text = meal.name
     }
 }
