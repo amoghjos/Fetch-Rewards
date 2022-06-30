@@ -29,8 +29,12 @@ class DessertsViewController: UIViewController {
         case K.Identifiers.sendToDessertDetailsViewController:
             guard let destinationVC = segue.destination as? DessertDetailsViewController else { return }
             guard let index = tableView.indexPathForSelectedRow?.row else { return }
-            destinationVC.mealID = desserts[index].id
-            break
+            let mealID = desserts[index].id
+            destinationVC.mealID = mealID
+            #warning("move this result to detail view controller")
+            mealsModelController.getMealDetails(for: mealID) { details in
+                print(details)
+            }
         default:
             break
         }

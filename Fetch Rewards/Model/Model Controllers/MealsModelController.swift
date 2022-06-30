@@ -28,4 +28,10 @@ struct MealsModelController {
             completion(filteredMeals)
         }
     }
+    
+    func getMealDetails(for id: Int, completion: @escaping ((MealDetails) -> Void)) {
+        mealsStorage.getMealDetails(for: id) { mealDetails in
+           completion(mealDetails)
+        }
+    }
 }
