@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DessertsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var mealsModelController = MealsModelController()
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension DessertsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
