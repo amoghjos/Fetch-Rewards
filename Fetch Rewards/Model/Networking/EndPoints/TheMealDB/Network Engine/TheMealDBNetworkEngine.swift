@@ -41,4 +41,8 @@ struct TheMealDBNetworkEngine: MealsStorage {
             }
         }
     }
+    
+    func getMealDetails(for id: Int, completion: @escaping (([MealDetails]) -> Void)) {
+        
+    }
 }
