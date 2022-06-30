@@ -53,6 +53,7 @@
                                         <connections>
                                             <outlet property="backgroundImage" destination="7NS-P3-JN9" id="oML-tm-q64"/>
                                             <outlet property="dessertName" destination="XQh-f7-7K0" id="8sF-Q5-Rcv"/>
+                                            <segue destination="NHr-hX-Si1" kind="show" identifier="sendToDessertDetailsViewController" id="Y9l-se-idj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -80,6 +81,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="79.6875"/>
+        </scene>
+        <!--Desset Details-->
+        <scene sceneID="ITi-uO-ZyW">
+            <objects>
+                <viewController id="NHr-hX-Si1" customClass="DessertDetailsViewController" customModule="Fetch_Rewards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CaG-Du-uHW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="12m-Aw-Kl5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Desset Details" id="Her-w2-goI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPU-HV-TXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gvj-bF-CRH">

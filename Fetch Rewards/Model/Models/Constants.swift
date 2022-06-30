@@ -10,5 +10,6 @@ import Foundation
 enum K {
     enum Identifiers {
         static let dessetTableViewCell = "DessetTableViewCell"
+        static let sendToDessertDetailsViewController = "sendToDessertDetailsViewController"
     }
 }

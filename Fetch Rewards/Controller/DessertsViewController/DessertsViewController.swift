@@ -22,11 +22,24 @@ class DessertsViewController: UIViewController {
             }
         })
     }
+    
+    //pass the meal of the selected meal
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case K.Identifiers.sendToDessertDetailsViewController:
+            guard let destinationVC = segue.destination as? DessertDetailsViewController else { return }
+            guard let index = tableView.indexPathForSelectedRow?.row else { return }
+            destinationVC.mealID = desserts[index].id
+            break
+        default:
+            break
+        }
+    }
 }
 
 //TODO: To allow for more testability, consider subclassing UITableViewDataSource and use one to one design pattern for passing desserts array
 extension DessertsViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return desserts.count
     }
@@ -41,5 +54,12 @@ extension DessertsViewController: UITableViewDataSource {
         dessertCell.setUp(from: dessert)
         
         return dessertCell
+    }
+}
+
+extension DessertsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //reset highlighted table view cell
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
