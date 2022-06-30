@@ -11,4 +11,5 @@ import Foundation
 protocol MealsStorage {
     func getMeals(for category: MealCategory, completion: @escaping (([Meal]) -> Void))
     #warning("add another function for getMealDetails(for id: Int) -> MealDetail")
+    func getMealDetails(for id: Int, completion: @escaping (() -> Void))
 }
