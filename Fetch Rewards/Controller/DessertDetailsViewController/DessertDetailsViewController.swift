@@ -43,3 +43,9 @@ extension DessertDetailsViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension DessertDetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
