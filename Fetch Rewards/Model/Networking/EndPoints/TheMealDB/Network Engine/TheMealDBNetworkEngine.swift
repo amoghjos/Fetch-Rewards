@@ -71,9 +71,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
                 Ingredient(name: responseDetails.ingredient18 ?? "", quantity: responseDetails.measurement18 ?? ""),
                 Ingredient(name: responseDetails.ingredient19 ?? "", quantity: responseDetails.measurement19 ?? ""),
                 Ingredient(name: responseDetails.ingredient20 ?? "", quantity: responseDetails.measurement20 ?? ""),
-            ].filter {
-                !$0.name.isEmpty && !$0.quantity.isEmpty
-            }
+            ]
             
             let mealDetails = MealDetails(name: responseDetails.name,
                                           instructions: responseDetails.instructions,

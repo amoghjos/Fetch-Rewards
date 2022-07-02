@@ -10,12 +10,13 @@ import UIKit
 class DessertDetailsViewController: UIViewController {
     
     var mealID: Int?
-    var mealDetails: MealDetails?
     
     override func viewWillAppear(_ animated: Bool) {
         if let mealID = mealID {
-            MealsModelController().getMealDetails(for: mealID) { details in
-                self.mealDetails = details
+            MealsModelController().getMealDetails(for: mealID) { mealDetails in
+                DispatchQueue.main.async {
+                    self.title = mealDetails.name
+                }
             }
         }
     }
