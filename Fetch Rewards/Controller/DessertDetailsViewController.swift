@@ -11,8 +11,9 @@ class DessertDetailsViewController: UIViewController {
     
     var mealID: Int?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(mealID)
+    override func viewWillAppear(_ animated: Bool) {
+        MealsModelController().getMealDetails(for: mealID!) { details in
+            print(details)
+        }
     }
 }

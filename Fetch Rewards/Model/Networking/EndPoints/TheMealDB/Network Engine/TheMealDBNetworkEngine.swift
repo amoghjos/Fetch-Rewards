@@ -66,11 +66,11 @@ struct TheMealDBNetworkEngine: MealsStorage {
                 Ingredient(name: responseDetails.ingredient13, quantity: responseDetails.measurement13),
                 Ingredient(name: responseDetails.ingredient14, quantity: responseDetails.measurement14),
                 Ingredient(name: responseDetails.ingredient15, quantity: responseDetails.measurement15),
-                Ingredient(name: responseDetails.ingredient16, quantity: responseDetails.measurement16),
-                Ingredient(name: responseDetails.ingredient17, quantity: responseDetails.measurement17),
-                Ingredient(name: responseDetails.ingredient18, quantity: responseDetails.measurement18),
-                Ingredient(name: responseDetails.ingredient19, quantity: responseDetails.measurement19),
-                Ingredient(name: responseDetails.ingredient20, quantity: responseDetails.measurement20),
+                Ingredient(name: responseDetails.ingredient16 ?? "", quantity: responseDetails.measurement16 ?? ""),
+                Ingredient(name: responseDetails.ingredient17 ?? "", quantity: responseDetails.measurement17 ?? ""),
+                Ingredient(name: responseDetails.ingredient18 ?? "", quantity: responseDetails.measurement18 ?? ""),
+                Ingredient(name: responseDetails.ingredient19 ?? "", quantity: responseDetails.measurement19 ?? ""),
+                Ingredient(name: responseDetails.ingredient20 ?? "", quantity: responseDetails.measurement20 ?? ""),
             ].filter {
                 !$0.name.isEmpty && !$0.quantity.isEmpty
             }

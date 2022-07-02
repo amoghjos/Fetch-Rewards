@@ -26,11 +26,13 @@ struct MealDetailsNetworkResponse: Codable {
     let ingredient13: String
     let ingredient14: String
     let ingredient15: String
-    let ingredient16: String
-    let ingredient17: String
-    let ingredient18: String
-    let ingredient19: String
-    let ingredient20: String
+    
+    //The reason the below 4 ingredients are optional is because JSON response could either be nil or empty string. Same applies to measurements
+    let ingredient16: String?
+    let ingredient17: String?
+    let ingredient18: String?
+    let ingredient19: String?
+    let ingredient20: String?
     
     let measurement1: String
     let measurement2: String
@@ -47,11 +49,11 @@ struct MealDetailsNetworkResponse: Codable {
     let measurement13: String
     let measurement14: String
     let measurement15: String
-    let measurement16: String
-    let measurement17: String
-    let measurement18: String
-    let measurement19: String
-    let measurement20: String
+    let measurement16: String?
+    let measurement17: String?
+    let measurement18: String?
+    let measurement19: String?
+    let measurement20: String?
     
     enum CodingKeys: String, CodingKey {
         case name = "strMeal"
