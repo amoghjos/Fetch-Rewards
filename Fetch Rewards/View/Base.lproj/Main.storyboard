@@ -171,6 +171,7 @@
                     <navigationItem key="navigationItem" title="Desset Details" id="Her-w2-goI"/>
                     <connections>
                         <outlet property="ingredientsTableView" destination="Lfc-v0-TPO" id="MDy-UE-VHe"/>
+                        <outlet property="instructionDetailsLabel" destination="KdA-GP-AhQ" id="RgZ-V6-lxq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPU-HV-TXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

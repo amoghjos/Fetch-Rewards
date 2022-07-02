@@ -9,6 +9,7 @@ import UIKit
 
 class DessertDetailsViewController: UIViewController {
     @IBOutlet weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var instructionDetailsLabel: UILabel!
     
     var mealID: Int?
     var ingredients = [Ingredient]()
@@ -18,6 +19,7 @@ class DessertDetailsViewController: UIViewController {
             MealsModelController().getMealDetails(for: mealID) { mealDetails in
                 DispatchQueue.main.async {
                     self.title = mealDetails.name
+                    self.instructionDetailsLabel.text = mealDetails.instructions
                     self.ingredients = mealDetails.ingredients
                     self.ingredientsTableView.reloadData()
                 }
