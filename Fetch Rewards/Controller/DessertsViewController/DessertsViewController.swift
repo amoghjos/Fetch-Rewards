@@ -10,12 +10,12 @@ import UIKit
 class DessertsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var mealsModelController = MealsModelController()
     var desserts = [Meal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mealsModelController.getMeals(for: .dessert, completion: {
+        //TODO: Instead of creating a new instance, use dependancy injection to create instance of mealsModel for better testability. 
+        MealsModelController().getMeals(for: .dessert, completion: {
             self.desserts = $0
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -29,8 +29,8 @@ class DessertsViewController: UIViewController {
         case K.Identifiers.sendToDessertDetailsViewController:
             guard let destinationVC = segue.destination as? DessertDetailsViewController else { return }
             guard let index = tableView.indexPathForSelectedRow?.row else { return }
-            destinationVC.mealID = desserts[index].id
-            break
+            let mealID = desserts[index].id
+            destinationVC.mealID = mealID
         default:
             break
         }

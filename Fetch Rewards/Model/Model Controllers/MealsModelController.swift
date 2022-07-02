@@ -28,4 +28,18 @@ struct MealsModelController {
             completion(filteredMeals)
         }
     }
+    
+    func getMealDetails(for id: Int, completion: @escaping ((MealDetails) -> Void)) {
+        mealsStorage.getMealDetails(for: id) { mealDetails in
+            let filteredIngridients = mealDetails.ingredients.filter {
+                !$0.name.isEmpty && !$0.quantity.isEmpty
+            }
+            let filteredMealDetails = MealDetails(
+                name: mealDetails.name,
+                instructions: mealDetails.instructions,
+                ingredients: filteredIngridients)
+            
+           completion(filteredMealDetails)
+        }
+    }
 }

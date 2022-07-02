@@ -83,10 +83,13 @@ class MealsModelControllerTests: XCTestCase {
 }
 
 fileprivate class MealsStorageStub: MealsStorage {
+    func getMealDetails(for id: Int, completion: @escaping ((MealDetails) -> Void)) {
+        
+    }
+        
     func getMeals(for category: MealCategory, completion: @escaping (([Meal]) -> Void)) {
         completion(meals)
     }
-    
     
     private let meals: [Meal]
     
