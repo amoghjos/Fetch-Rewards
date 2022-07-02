@@ -76,7 +76,6 @@ class TheMealDBNetworkEngineTests: XCTestCase {
                 let actualMeal = actualMeals[i]
                 XCTAssertEqual(expectedMeal.id, actualMeal.id)
                 XCTAssertEqual(expectedMeal.name, actualMeal.name)
-//                XCTAssertTrue(expectedMeal.image.isEqual(actualMeal.image))
                 let expectedImageData = expectedMeal.image.pngData()
                 let actualImageData = actualMeal.image.pngData()
                 XCTAssertEqual(expectedImageData, actualImageData)
