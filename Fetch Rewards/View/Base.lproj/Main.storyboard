@@ -145,6 +145,10 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="ingredient" destination="Jwa-Vx-wAm" id="fbj-Bu-4m3"/>
+                                                    <outlet property="quantity" destination="iy9-No-9sP" id="VuN-LA-fRr"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>

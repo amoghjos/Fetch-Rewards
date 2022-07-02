@@ -11,12 +11,15 @@ class DessertDetailsViewController: UIViewController {
     @IBOutlet weak var ingredientsTableView: UITableView!
     
     var mealID: Int?
+    var ingredients = [Ingredient]()
     
     override func viewWillAppear(_ animated: Bool) {
         if let mealID = mealID {
             MealsModelController().getMealDetails(for: mealID) { mealDetails in
                 DispatchQueue.main.async {
                     self.title = mealDetails.name
+                    self.ingredients = mealDetails.ingredients
+                    self.ingredientsTableView.reloadData()
                 }
             }
         }
@@ -25,11 +28,16 @@ class DessertDetailsViewController: UIViewController {
 
 extension DessertDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ingredientsTableView.dequeueReusableCell(withIdentifier: "IngredientTableViewCell")!
+        guard let cell = ingredientsTableView.dequeueReusableCell(withIdentifier: K.Identifiers.ingredientTableViewCell) as? IngredientTableViewCell
+        else { return UITableViewCell() }
+        
+        let ingredient = self.ingredients[indexPath.row]
+        cell.setUp(ingredient)
+        
         return cell
     }
 }
