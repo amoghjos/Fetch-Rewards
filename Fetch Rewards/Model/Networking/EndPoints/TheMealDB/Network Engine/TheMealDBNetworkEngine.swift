@@ -12,32 +12,9 @@ import UIKit
 struct TheMealDBNetworkEngine: MealsStorage {
     
     private let networkModel: NetworkModel
-    private let imageCache = NSCache<NSString, UIImage>()
     
     init(networkModel: NetworkModel = NetworkModel()){
         self.networkModel = networkModel
-    }
-    
-    private func loadImage(from urlString: String, completion: @escaping ((UIImage) -> Void)){
-        
-        //check if the image already exsits in cache
-        let key = NSString(string: urlString)
-        if let cachedImage = imageCache.object(forKey: key) {
-            completion(cachedImage)
-            return
-        }
-        
-        //if not, make a url request
-        let url = URL(string: urlString)!
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            if let data = data,
-               let downloadedImage = UIImage(data: data)  {
-                imageCache.setObject(downloadedImage,
-                                     forKey:
-                                        NSString(string: urlString))
-                completion(downloadedImage)
-            }
-        }.resume()
     }
     
     func getMeals(for category: MealCategory, completion: @escaping (([Meal]) -> Void)) {
@@ -56,7 +33,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
                 let dispatchGroup = DispatchGroup()
                 for responseMeal in response!.meals {
                     dispatchGroup.enter()
-                    loadImage(from: responseMeal.imageURL) { image in
+                    ImageLoader.loadImage(from: responseMeal.imageURL) { image in
                         let meal = Meal(name: responseMeal.name, image: image, id: Int(responseMeal.id)!)
                         meals.append(meal)
                         dispatchGroup.leave()

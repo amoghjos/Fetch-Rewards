@@ -202,6 +202,7 @@
 			children = (
 				CD495F2B28598746007C24E4 /* EndPoints */,
 				CD495F24285924E5007C24E4 /* NetworkModel.swift */,
+				CD8AA79D286FFBA500B6EE09 /* ImageLoading.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -308,7 +309,6 @@
 				CD2B9DD4286D84C700C2001A /* Constants.swift */,
 				CD2B9DDE286D93A100C2001A /* MealDetails.swift */,
 				CD2B9DE0286D941800C2001A /* Ingredient.swift */,
-				CD8AA79D286FFBA500B6EE09 /* ImageLoading.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
