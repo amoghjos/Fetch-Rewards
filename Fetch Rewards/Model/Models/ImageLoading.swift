@@ -10,7 +10,6 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 
 //Citation: https://www.youtube.com/c/AryamanSharda
-
 extension UIImageView {
     /// Loads an image from a URL and saves it into an image cache, returns
     /// the image if already available in the cache.
@@ -52,3 +51,7 @@ extension UIImageView {
         return task
     }
 }
+
+
+
+
