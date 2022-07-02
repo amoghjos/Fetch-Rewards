@@ -10,7 +10,7 @@ import UIKit
 
 //TheMealDBNetworkEngine is responsible for putting everything together. It uses the end point to construct URL and makes network requests using NetworkModel using NetworkResponse. It also happens to confirm to MealsStorage protocol and hence, currently, provides storage for Model Controllers
 struct TheMealDBNetworkEngine: MealsStorage {
-
+    
     private let networkModel: NetworkModel
     
     init(networkModel: NetworkModel = NetworkModel()){
@@ -30,14 +30,18 @@ struct TheMealDBNetworkEngine: MealsStorage {
             
             networkModel.makeRequest(at: url) { (response:TheMealDBResponse, error) in
                 //TODO: Instead of force unwrapping response, consider modifying the function so that it throws an error when response is invalid
+                let dispatchGroup = DispatchGroup()
                 for responseMeal in response!.meals {
-                    #warning("get image from the url")
-                    let image = UIImage(named: "Apple Frangipan Tart")!
-                    
-                    let meal = Meal(name: responseMeal.name, image: image, id: Int(responseMeal.id)!)
-                    meals.append(meal)
+                    dispatchGroup.enter()
+                    ImageLoader.loadImage(from: responseMeal.imageURL) { image in
+                        let meal = Meal(name: responseMeal.name, image: image, id: Int(responseMeal.id)!)
+                        meals.append(meal)
+                        dispatchGroup.leave()
+                    }
                 }
-                completion(meals)
+                dispatchGroup.notify(queue: DispatchQueue.global()){
+                    completion(meals)
+                }
             }
         }
     }
@@ -46,7 +50,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
         let endPoint = EndPoints.TheMealDB.getMealDetails(id: id)
         let url = networkModel.getURL(for: endPoint)!
         typealias TheMealDBResponse = TheMealDBNetworkResponse<[MealDetailsNetworkResponse]>?
-
+        
         networkModel.makeRequest(at: url) { (response:TheMealDBResponse, error) in
             let responseDetails = response!.meals[0]
             
