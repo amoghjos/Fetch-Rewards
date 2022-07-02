@@ -8,6 +8,7 @@
 import UIKit
 
 class DessertDetailsViewController: UIViewController {
+    @IBOutlet weak var ingredientsTableView: UITableView!
     
     var mealID: Int?
     
@@ -19,5 +20,16 @@ class DessertDetailsViewController: UIViewController {
                 }
             }
         }
+    }
+}
+
+extension DessertDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ingredientsTableView.dequeueReusableCell(withIdentifier: "IngredientTableViewCell")!
+        return cell
     }
 }

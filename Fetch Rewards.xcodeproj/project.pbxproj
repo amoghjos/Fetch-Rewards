@@ -24,6 +24,7 @@
 		CD495F27285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */; };
 		CD495F2928598727007C24E4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2828598727007C24E4 /* EndPoint.swift */; };
 		CD495F2D285987EF007C24E4 /* TheMealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F2C285987EF007C24E4 /* TheMealDB.swift */; };
+		CD8AA79C286FF4F100B6EE09 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8AA79B286FF4F100B6EE09 /* IngredientTableViewCell.swift */; };
 		CDBA5DAB285F94F100306350 /* TheMealDBCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */; };
 		CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */; };
 		CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB0285FA49C00306350 /* EndPoints.swift */; };
@@ -72,6 +73,7 @@
 		CD495F26285986AF007C24E4 /* TheMealDBEndPointGetMealsForDessertCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealsForDessertCategoryTests.swift; sourceTree = "<group>"; };
 		CD495F2828598727007C24E4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		CD495F2C285987EF007C24E4 /* TheMealDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDB.swift; sourceTree = "<group>"; };
+		CD8AA79B286FF4F100B6EE09 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBCategory.swift; sourceTree = "<group>"; };
 		CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealDetailsForIDTests.swift; sourceTree = "<group>"; };
 		CDBA5DB0285FA49C00306350 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -160,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2B9DD3286D848500C2001A /* DessertsViewController */,
-				CD2B9DDA286D8CDB00C2001A /* DessertDetailsViewController.swift */,
+				CD8AA79A286FF4B200B6EE09 /* DessertDetailsViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +212,15 @@
 				CDBA5DA9285F94DD00306350 /* TheMealDB */,
 			);
 			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		CD8AA79A286FF4B200B6EE09 /* DessertDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B9DDA286D8CDB00C2001A /* DessertDetailsViewController.swift */,
+				CD8AA79B286FF4F100B6EE09 /* IngredientTableViewCell.swift */,
+			);
+			path = DessertDetailsViewController;
 			sourceTree = "<group>";
 		};
 		CDBA5DA9285F94DD00306350 /* TheMealDB */ = {
@@ -427,6 +438,7 @@
 				CDBBF52D2861228B0046DC51 /* Meal.swift in Sources */,
 				CD2B9DDB286D8CDB00C2001A /* DessertDetailsViewController.swift in Sources */,
 				CD495F0428591CC3007C24E4 /* DessertsViewController.swift in Sources */,
+				CD8AA79C286FF4F100B6EE09 /* IngredientTableViewCell.swift in Sources */,
 				CD2B9DD5286D84C700C2001A /* Constants.swift in Sources */,
 				CD2B9DD7286D84F400C2001A /* DessetTableViewCell.swift in Sources */,
 				CD495F2928598727007C24E4 /* EndPoint.swift in Sources */,
