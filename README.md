@@ -1,6 +1,28 @@
 # Fetch-Rewards
 
-This is the take home project from Fetch Reward for the role of Sr. iOS Engineer
+This is the take home project from Fetch Reward for the role of Sr. iOS Engineer.
+
+## Architecture
+
+I have used MVC design pattern to architect the project. It uses various technique like dependancy injection, dependency inversion, model controller, lossly coupled modules to create a overall modular design. Please check the link to UML diagram I have created to explain how different entities are interacting with each other. 
+
+## Testing
+
+I followed a test driven development approch while creating the networking layer. Moreover, I have added various comments throughout the project on how we can further modify code to improve testability. The code overall, including view controllers, are easily testable and we can add more unit tests to project!
+
+![Screenshot of Test Cases](https://i.ibb.co/QXtPvMJ/Screenshot-2022-07-03-at-2-08-37-AM.png)
+
+## Demo
+
+Please check the screen recording of the app on YouTube here: 
+
+
+## Assumptions
+
+I would normally clarify these requirements with the PO but, in this scenario, I made few assumptions while developing this application which are listed below:
+- If the data from JSON request is missing, we skip that entry instead of showing empty cell
+- We sort the data alphabetically without considering UPPERCASE or lowercase. 
+
 
 ## Areas of Improvement
 - The app currently does not work without wifi. Hence, we should consider adding placeholder image or handling network erros to let user know that data isn't avaiable instead of crashing the app
