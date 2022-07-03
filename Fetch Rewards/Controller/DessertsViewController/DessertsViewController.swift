@@ -23,7 +23,7 @@ class DessertsViewController: UIViewController {
         })
     }
     
-    //pass the meal of the selected meal
+    //pass the meal id of the selected meal
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case K.Identifiers.sendToDessertDetailsViewController:
