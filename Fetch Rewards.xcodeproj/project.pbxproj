@@ -41,6 +41,7 @@
 		CDBBF53128613DA80046DC51 /* MealsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF53028613DA80046DC51 /* MealsStorage.swift */; };
 		CDBBF535286145E40046DC51 /* TheMealDBNetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF534286145E40046DC51 /* TheMealDBNetworkEngine.swift */; };
 		CDBBF537286146950046DC51 /* TheMealDBNetworkEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBF536286146950046DC51 /* TheMealDBNetworkEngineTests.swift */; };
+		CDBF3673287160CF0098C19B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CDBF3672287160CF0098C19B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		CDBBF53028613DA80046DC51 /* MealsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsStorage.swift; sourceTree = "<group>"; };
 		CDBBF534286145E40046DC51 /* TheMealDBNetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkEngine.swift; sourceTree = "<group>"; };
 		CDBBF536286146950046DC51 /* TheMealDBNetworkEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBNetworkEngineTests.swift; sourceTree = "<group>"; };
+		CDBF3672287160CF0098C19B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		CD495EF328591CC3007C24E4 = {
 			isa = PBXGroup;
 			children = (
+				CDBF3672287160CF0098C19B /* README.md */,
 				CD495EFE28591CC3007C24E4 /* Fetch Rewards */,
 				CD495F1C2859239D007C24E4 /* Fetch RewardsTests */,
 				CD495EFD28591CC3007C24E4 /* Products */,
@@ -413,6 +416,7 @@
 			files = (
 				CD495F0C28591CC5007C24E4 /* LaunchScreen.storyboard in Resources */,
 				CD495F0928591CC5007C24E4 /* Assets.xcassets in Resources */,
+				CDBF3673287160CF0098C19B /* README.md in Resources */,
 				CD495F0728591CC3007C24E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
