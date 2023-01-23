@@ -22,6 +22,8 @@ class MealTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32)
+        label.textColor = .white
+        label.numberOfLines = 0
         return label
     }()
     
@@ -51,7 +53,8 @@ class MealTableViewCell: UITableViewCell {
         mealImage.addSubview(mealName)
         NSLayoutConstraint.activate([
             mealName.leftAnchor.constraint(equalTo: mealImage.leftAnchor, constant: 15),
-            mealName.bottomAnchor.constraint(equalTo: mealImage.bottomAnchor, constant: -10)
+            mealName.bottomAnchor.constraint(equalTo: mealImage.bottomAnchor, constant: -10),
+            mealName.rightAnchor.constraint(equalTo: mealImage.rightAnchor, constant: -10)
         ])
     }
     

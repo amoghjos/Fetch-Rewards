@@ -9,6 +9,8 @@ import UIKit
 
 class MealViewController: UIViewController {
     
+    var meals: [Meal] = []
+    
     lazy private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorColor = .clear
@@ -22,6 +24,7 @@ class MealViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureTableView()
         configurMealTableViewCell()
+        getMeals()
     }
     
     private func configureNavigationBar() {
@@ -44,16 +47,25 @@ class MealViewController: UIViewController {
     private func configurMealTableViewCell() {
         tableView.register(MealTableViewCell.self, forCellReuseIdentifier: K.Identifiers.mealTableViewCell)
     }
+    
+    private func getMeals(){
+        MealsModelController().getMeals(for: .dessert) { meals in
+            DispatchQueue.main.async {
+                self.meals = meals
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension MealViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let mealTableViewCell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.mealTableViewCell, for: indexPath) as? MealTableViewCell else { return UITableViewCell() }
-//        mealTableViewCell.setUp(with: <#T##Meal#>)
+        mealTableViewCell.setUp(with: meals[indexPath.row])
         return mealTableViewCell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        meals.count
     }
 }
 
