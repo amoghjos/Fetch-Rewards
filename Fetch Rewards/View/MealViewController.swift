@@ -39,7 +39,7 @@ class MealViewController: UIViewController {
     }
 }
 
-extension MealsScreen: UITableViewDataSource {
+extension MealViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         UITableViewCell()
     }
