@@ -12,6 +12,7 @@ class MealViewController: UIViewController {
     lazy private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -29,7 +30,6 @@ class MealViewController: UIViewController {
     
     private func configureTableView() {
         view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
