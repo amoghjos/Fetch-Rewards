@@ -21,6 +21,7 @@ class MealViewController: UIViewController {
         configureNavigationBar()
         view.backgroundColor = .systemBackground
         configureTableView()
+        configurMealTableViewCell()
     }
     
     private func configureNavigationBar() {
@@ -37,14 +38,27 @@ class MealViewController: UIViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
         tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    private func configurMealTableViewCell() {
+        tableView.register(MealTableViewCell.self, forCellReuseIdentifier: K.Identifiers.mealTableViewCell)
     }
 }
 
 extension MealViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        MealTableViewCell()
+        guard let mealTableViewCell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.mealTableViewCell, for: indexPath) as? MealTableViewCell else { return UITableViewCell() }
+//        mealTableViewCell.setUp(with: <#T##Meal#>)
+        return mealTableViewCell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         10
+    }
+}
+
+extension MealViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

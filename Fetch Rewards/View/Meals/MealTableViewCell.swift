@@ -34,11 +34,11 @@ class MealTableViewCell: UITableViewCell {
     
     func setUp(with meal: Meal) {
         mealImage.image = meal.image
+        mealName.text = meal.name
     }
     
     private func configureImageView() {
         addSubview(mealImage)
-        mealImage.image = UIImage(named: "Apam balik")
         NSLayoutConstraint.activate([
             mealImage.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             mealImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
@@ -49,7 +49,6 @@ class MealTableViewCell: UITableViewCell {
     
     private func configureMealName() {
         mealImage.addSubview(mealName)
-        mealName.text = "Hello"
         NSLayoutConstraint.activate([
             mealName.leftAnchor.constraint(equalTo: mealImage.leftAnchor, constant: 15),
             mealName.bottomAnchor.constraint(equalTo: mealImage.bottomAnchor, constant: -10)
