@@ -30,7 +30,7 @@ class MealTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         heightAnchor.constraint(equalToConstant: 150).isActive = true
         configureImageView()
-//        configureMealName()
+        configureMealName()
     }
     
     func setUp(with meal: Meal) {
@@ -52,8 +52,8 @@ class MealTableViewCell: UITableViewCell {
         mealImage.addSubview(mealName)
         mealName.text = "Hello"
         NSLayoutConstraint.activate([
-            mealName.leftAnchor.constraint(equalTo: mealImage.leftAnchor, constant: 40),
-            mealName.bottomAnchor.constraint(equalTo: mealImage.bottomAnchor, constant: 40)
+            mealName.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            mealName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
     }
     
