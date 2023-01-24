@@ -23,24 +23,22 @@ class MealDetailViewController: UIViewController {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return contentView
     }()
-    
-    private lazy var mealDetailStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        return stackView
-    }()
-    
+        
     private lazy var instructionsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Instructions InstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructionsInstructions"
+        label.text = "Instructions"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 100)
+        label.font = UIFont.systemFont(ofSize: 32)
+        label.textColor = .label
+        return label
+    }()
+    
+    private lazy var instructionDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .label
         return label
     }()
@@ -60,7 +58,7 @@ class MealDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setUpScrollView()
-        setUpMealDetailStackView()
+        setUpInstructions()
         
         guard let mealID = mealID else { return }
         loadMealDetails(for: mealID)
@@ -83,26 +81,22 @@ class MealDetailViewController: UIViewController {
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
     }
-
-    private func setUpMealDetailStackView() {
-        contentView.addSubview(mealDetailStackView)
+    
+    private func setUpInstructions() {
+        contentView.addSubview(instructionsLabel)
         NSLayoutConstraint.activate([
-            mealDetailStackView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            mealDetailStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            mealDetailStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            mealDetailStackView.topAnchor.constraint(equalTo: contentView.topAnchor)
+            instructionsLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            instructionsLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            instructionsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         
-        mealDetailStackView.addSubview(instructionsLabel)
+        contentView.addSubview(instructionDescription)
         NSLayoutConstraint.activate([
-            instructionsLabel.topAnchor.constraint(equalTo: mealDetailStackView.topAnchor),
-            instructionsLabel.bottomAnchor.constraint(equalTo: mealDetailStackView.bottomAnchor),
-            instructionsLabel.leftAnchor.constraint(equalTo: mealDetailStackView.leftAnchor),
-            instructionsLabel.rightAnchor.constraint(equalTo: mealDetailStackView.rightAnchor)
+            instructionDescription.topAnchor.constraint(equalTo: instructionsLabel.bottomAnchor),
+            instructionDescription.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            instructionDescription.widthAnchor.constraint(equalTo: instructionsLabel.widthAnchor),
+            instructionDescription.centerXAnchor.constraint(equalTo: instructionsLabel.centerXAnchor)
         ])
-             
-               
-        
     }
     
     // Helper
@@ -110,6 +104,7 @@ class MealDetailViewController: UIViewController {
         MealsModelController().getMealDetail(for: mealID) { mealDetail in
             DispatchQueue.main.async {
                 self.title = mealDetail.name
+                self.instructionDescription.text = mealDetail.instructions
             }
         }
     }
