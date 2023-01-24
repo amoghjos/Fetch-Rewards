@@ -1,6 +1,14 @@
 # Fetch-Rewards
 
-This is the take home project from Fetch Reward for the role of Sr. iOS Engineer.
+This is the take home project from Fetch Reward for the role of Sr. iOS Engineer. Here is the link to the assignment: [iOS Coding Challenge](https://fetch-hiring.s3.amazonaws.com/iOS+coding+exercise.pdf)
+
+## Second Submission Update (Jan 24, 2022)
+
+In this submission, I have replaced the user interface made using storyboard with programmatic UI using UIKit. Moreover, I implemented the suggestion of scroll view in this submission too and I had to fix some failing test cases. If you are interested in checking storyboard version, please check the branch [storyboard-ui](https://github.com/amoghjos/Fetch-Rewards/tree/storyboard-ui). 
+
+| Before      | After |
+| ----------- | ----------- |
+|![before](https://user-images.githubusercontent.com/20383342/214396336-326ee684-005b-4a42-b703-e3e47094f8f7.gif)|![after](https://user-images.githubusercontent.com/20383342/214396374-902fd8cb-65fa-4bef-9447-af89cfac32d3.gif)|
 
 ## Architecture
 
