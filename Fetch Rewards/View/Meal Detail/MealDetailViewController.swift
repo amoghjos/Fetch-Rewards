@@ -43,6 +43,13 @@ class MealDetailViewController: UIViewController {
         return label
     }()
     
+    private lazy var ingredientsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isScrollEnabled = false
+        return tableView
+    }()
+    
     // Initializers
     init(with mealID: Int) {
         super.init(nibName: nil, bundle: nil)
@@ -59,6 +66,7 @@ class MealDetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setUpScrollView()
         setUpInstructions()
+        setUpIngredientsTableView()
         
         guard let mealID = mealID else { return }
         loadMealDetails(for: mealID)
@@ -93,9 +101,20 @@ class MealDetailViewController: UIViewController {
         contentView.addSubview(instructionDescription)
         NSLayoutConstraint.activate([
             instructionDescription.topAnchor.constraint(equalTo: instructionsLabel.bottomAnchor),
-            instructionDescription.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             instructionDescription.widthAnchor.constraint(equalTo: instructionsLabel.widthAnchor),
             instructionDescription.centerXAnchor.constraint(equalTo: instructionsLabel.centerXAnchor)
+        ])
+    }
+    
+    private func setUpIngredientsTableView() {
+        ingredientsTableView.dataSource = self
+        contentView.addSubview(ingredientsTableView)
+        NSLayoutConstraint.activate([
+            ingredientsTableView.topAnchor.constraint(equalTo: instructionDescription.bottomAnchor, constant: 20),
+            ingredientsTableView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            ingredientsTableView.centerXAnchor.constraint(equalTo: instructionDescription.centerXAnchor),
+            ingredientsTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            ingredientsTableView.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     
@@ -107,5 +126,15 @@ class MealDetailViewController: UIViewController {
                 self.instructionDescription.text = mealDetail.instructions
             }
         }
+    }
+}
+
+extension MealDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
     }
 }
