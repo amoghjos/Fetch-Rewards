@@ -54,20 +54,21 @@ class MealDetailViewController: UIViewController {
     private func setUpScrollView() {
         view.addSubview(scrollView)
         NSLayoutConstraint.activate([
-            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor)
+            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         scrollView.addSubview(contentView)
         NSLayoutConstraint.activate([
-            contentView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            contentView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            contentView.topAnchor.constraint(equalTo: view.topAnchor)
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
     }
+
     
     // Helper
     private func loadMealDetails(for mealID: Int) {
