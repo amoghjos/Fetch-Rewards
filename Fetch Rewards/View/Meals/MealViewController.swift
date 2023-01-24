@@ -72,5 +72,6 @@ extension MealViewController: UITableViewDataSource {
 extension MealViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(MealDetailViewController(with: meals[indexPath.row].id), animated: true)
     }
 }

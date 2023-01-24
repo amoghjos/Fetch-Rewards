@@ -23,6 +23,7 @@
 		CD8AA79E286FFBA500B6EE09 /* ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8AA79D286FFBA500B6EE09 /* ImageLoading.swift */; };
 		CDA7D1ED297F256E000DDCC5 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7D1EC297F256E000DDCC5 /* MealViewController.swift */; };
 		CDA7D1F1297F3A81000DDCC5 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7D1F0297F3A81000DDCC5 /* MealTableViewCell.swift */; };
+		CDA7D1F5297F9A15000DDCC5 /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA7D1F4297F9A15000DDCC5 /* MealDetailViewController.swift */; };
 		CDBA5DAB285F94F100306350 /* TheMealDBCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */; };
 		CDBA5DAF285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */; };
 		CDBA5DB1285FA49C00306350 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA5DB0285FA49C00306350 /* EndPoints.swift */; };
@@ -71,6 +72,7 @@
 		CD8AA79D286FFBA500B6EE09 /* ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoading.swift; sourceTree = "<group>"; };
 		CDA7D1EC297F256E000DDCC5 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		CDA7D1F0297F3A81000DDCC5 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		CDA7D1F4297F9A15000DDCC5 /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
 		CDBA5DAA285F94F100306350 /* TheMealDBCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBCategory.swift; sourceTree = "<group>"; };
 		CDBA5DAE285FA01B00306350 /* TheMealDBEndPointGetMealDetailsForIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealDBEndPointGetMealDetailsForIDTests.swift; sourceTree = "<group>"; };
 		CDBA5DB0285FA49C00306350 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 				CD495F132859200E007C24E4 /* Configuration */,
 				CD495F16285920B5007C24E4 /* Model */,
 				CD495F152859202D007C24E4 /* View */,
-				CD495F1428592020007C24E4 /* Controller */,
 			);
 			path = "Fetch Rewards";
 			sourceTree = "<group>";
@@ -148,18 +149,12 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		CD495F1428592020007C24E4 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		CD495F152859202D007C24E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD495F0A28591CC5007C24E4 /* LaunchScreen.storyboard */,
 				CDA7D1F2297F3A89000DDCC5 /* Meals */,
+				CDA7D1F3297F99E7000DDCC5 /* Meal Detail */,
+				CD495F0A28591CC5007C24E4 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +205,14 @@
 				CDA7D1F0297F3A81000DDCC5 /* MealTableViewCell.swift */,
 			);
 			path = Meals;
+			sourceTree = "<group>";
+		};
+		CDA7D1F3297F99E7000DDCC5 /* Meal Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CDA7D1F4297F9A15000DDCC5 /* MealDetailViewController.swift */,
+			);
+			path = "Meal Detail";
 			sourceTree = "<group>";
 		};
 		CDBA5DA9285F94DD00306350 /* TheMealDB */ = {
@@ -421,6 +424,7 @@
 				CDBA5DAB285F94F100306350 /* TheMealDBCategory.swift in Sources */,
 				CDA7D1F1297F3A81000DDCC5 /* MealTableViewCell.swift in Sources */,
 				CDA7D1ED297F256E000DDCC5 /* MealViewController.swift in Sources */,
+				CDA7D1F5297F9A15000DDCC5 /* MealDetailViewController.swift in Sources */,
 				CD2B9DE1286D941800C2001A /* Ingredient.swift in Sources */,
 				CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */,
 				CDBBF535286145E40046DC51 /* TheMealDBNetworkEngine.swift in Sources */,
