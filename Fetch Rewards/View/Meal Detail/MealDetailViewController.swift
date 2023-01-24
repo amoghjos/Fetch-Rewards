@@ -23,5 +23,15 @@ class MealDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemPink
+        
+        guard let mealID = mealID else { return }
+        loadMealDetails(for: mealID)
+    }
+    
+    private func loadMealDetails(for mealID: Int) {
+        MealsModelController().getMealDetail(for: mealID) { mealDetail in
+            //update properties
+            print(mealDetail)
+        }
     }
 }

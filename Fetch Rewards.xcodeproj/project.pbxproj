@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD2B9DD5286D84C700C2001A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DD4286D84C700C2001A /* Constants.swift */; };
 		CD2B9DDD286D913700C2001A /* MealDetailsNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DDC286D913700C2001A /* MealDetailsNetworkResponse.swift */; };
-		CD2B9DDF286D93A100C2001A /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DDE286D93A100C2001A /* MealDetails.swift */; };
+		CD2B9DDF286D93A100C2001A /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DDE286D93A100C2001A /* MealDetail.swift */; };
 		CD2B9DE1286D941800C2001A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9DE0286D941800C2001A /* Ingredient.swift */; };
 		CD495F0028591CC3007C24E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495EFF28591CC3007C24E4 /* AppDelegate.swift */; };
 		CD495F0228591CC3007C24E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD495F0128591CC3007C24E4 /* SceneDelegate.swift */; };
@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		CD2B9DD4286D84C700C2001A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD2B9DDC286D913700C2001A /* MealDetailsNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsNetworkResponse.swift; sourceTree = "<group>"; };
-		CD2B9DDE286D93A100C2001A /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
+		CD2B9DDE286D93A100C2001A /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
 		CD2B9DE0286D941800C2001A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		CD495EFC28591CC3007C24E4 /* Fetch Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Rewards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD495EFF28591CC3007C24E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 				CDBBF52C2861228B0046DC51 /* Meal.swift */,
 				CDBBF52E286128920046DC51 /* MealCategory.swift */,
 				CD2B9DD4286D84C700C2001A /* Constants.swift */,
-				CD2B9DDE286D93A100C2001A /* MealDetails.swift */,
+				CD2B9DDE286D93A100C2001A /* MealDetail.swift */,
 				CD2B9DE0286D941800C2001A /* Ingredient.swift */,
 			);
 			path = Models;
@@ -429,7 +429,7 @@
 				CD495F25285924E5007C24E4 /* NetworkModel.swift in Sources */,
 				CDBBF535286145E40046DC51 /* TheMealDBNetworkEngine.swift in Sources */,
 				CDBA5DB6285FBA4A00306350 /* TheMealDBNetworkResponse.swift in Sources */,
-				CD2B9DDF286D93A100C2001A /* MealDetails.swift in Sources */,
+				CD2B9DDF286D93A100C2001A /* MealDetail.swift in Sources */,
 				CDBBF52D2861228B0046DC51 /* Meal.swift in Sources */,
 				CD2B9DD5286D84C700C2001A /* Constants.swift in Sources */,
 				CD495F2928598727007C24E4 /* EndPoint.swift in Sources */,
