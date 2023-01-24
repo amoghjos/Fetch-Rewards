@@ -10,6 +10,7 @@ import UIKit
 class MealDetailViewController: UIViewController {
 
     var mealID: Int?
+    var ingredients: [Ingredient] = []
     
     // UI Elements
     private lazy var scrollView: UIScrollView = {
@@ -47,6 +48,7 @@ class MealDetailViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.isScrollEnabled = false
+        tableView.isUserInteractionEnabled = false
         return tableView
     }()
     
@@ -96,7 +98,7 @@ class MealDetailViewController: UIViewController {
         contentView.addSubview(instructionsLabel)
         NSLayoutConstraint.activate([
             instructionsLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            instructionsLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            instructionsLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: -20),
             instructionsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         
@@ -110,6 +112,7 @@ class MealDetailViewController: UIViewController {
     
     private func setUpIngredientsTableView() {
         ingredientsTableView.dataSource = self
+        ingredientsTableView.register(IngredientTableViewCell.self, forCellReuseIdentifier: K.Identifiers.ingredientTableViewCell)
         contentView.addSubview(ingredientsTableView)
         ingredientsTableViewHeightConstraint = ingredientsTableView.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([
@@ -132,6 +135,8 @@ class MealDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.title = mealDetail.name
                 self.instructionDescription.text = mealDetail.instructions
+                self.ingredients = mealDetail.ingredients
+                self.ingredientsTableView.reloadData()
             }
         }
     }
@@ -139,12 +144,12 @@ class MealDetailViewController: UIViewController {
 
 extension MealDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "hello world"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.ingredientTableViewCell, for: indexPath) as? IngredientTableViewCell else { return UITableViewCell() }
+        cell.setUp(with: ingredients[indexPath.row])
         return cell
     }
 }

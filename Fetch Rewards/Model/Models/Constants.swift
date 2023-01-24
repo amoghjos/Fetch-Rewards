@@ -11,6 +11,5 @@ enum K {
     enum Identifiers {
         static let mealTableViewCell = "mealTableViewCell"
         static let ingredientTableViewCell = "IngredientTableViewCell"
-        static let sendToDessertDetailsViewController = "sendToDessertDetailsViewController"
     }
 }
