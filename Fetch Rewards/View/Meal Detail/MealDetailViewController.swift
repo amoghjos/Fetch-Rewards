@@ -50,6 +50,8 @@ class MealDetailViewController: UIViewController {
         return tableView
     }()
     
+    private var ingredientsTableViewHeightConstraint: NSLayoutConstraint?
+    
     // Initializers
     init(with mealID: Int) {
         super.init(nibName: nil, bundle: nil)
@@ -100,7 +102,7 @@ class MealDetailViewController: UIViewController {
         
         contentView.addSubview(instructionDescription)
         NSLayoutConstraint.activate([
-            instructionDescription.topAnchor.constraint(equalTo: instructionsLabel.bottomAnchor),
+            instructionDescription.topAnchor.constraint(equalTo: instructionsLabel.bottomAnchor, constant: 10),
             instructionDescription.widthAnchor.constraint(equalTo: instructionsLabel.widthAnchor),
             instructionDescription.centerXAnchor.constraint(equalTo: instructionsLabel.centerXAnchor)
         ])
@@ -109,13 +111,19 @@ class MealDetailViewController: UIViewController {
     private func setUpIngredientsTableView() {
         ingredientsTableView.dataSource = self
         contentView.addSubview(ingredientsTableView)
+        ingredientsTableViewHeightConstraint = ingredientsTableView.heightAnchor.constraint(equalToConstant: 50)
         NSLayoutConstraint.activate([
             ingredientsTableView.topAnchor.constraint(equalTo: instructionDescription.bottomAnchor, constant: 20),
             ingredientsTableView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
             ingredientsTableView.centerXAnchor.constraint(equalTo: instructionDescription.centerXAnchor),
             ingredientsTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            ingredientsTableView.heightAnchor.constraint(equalToConstant: 500)
+            ingredientsTableViewHeightConstraint!
         ])
+    }
+    
+    override func viewDidLayoutSubviews() {
+        ingredientsTableView.frame.size = ingredientsTableView.contentSize
+        ingredientsTableViewHeightConstraint?.constant = ingredientsTableView.frame.height
     }
     
     // Helper
@@ -135,6 +143,8 @@ extension MealDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "hello world"
+        return cell
     }
 }
