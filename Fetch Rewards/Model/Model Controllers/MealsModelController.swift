@@ -29,13 +29,13 @@ struct MealsModelController {
         }
     }
     
-    func getMealDetails(for id: Int, completion: @escaping ((MealDetails) -> Void)) {
+    func getMealDetail(for id: Int, completion: @escaping ((MealDetail) -> Void)) {
         mealsStorage.getMealDetails(for: id) { mealDetails in
             let filteredIngridients = mealDetails.ingredients.filter {
                 //remove any empty ingredients entries
                 !$0.name.isEmpty && !$0.quantity.isEmpty
             }
-            let filteredMealDetails = MealDetails(
+            let filteredMealDetails = MealDetail(
                 name: mealDetails.name,
                 instructions: mealDetails.instructions,
                 ingredients: filteredIngridients)

@@ -45,7 +45,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
         }
     }
     
-    func getMealDetails(for id: Int, completion: @escaping ((MealDetails) -> Void)) {
+    func getMealDetails(for id: Int, completion: @escaping ((MealDetail) -> Void)) {
         let endPoint = EndPoints.TheMealDB.getMealDetails(id: id)
         let url = networkModel.getURL(for: endPoint)!
         typealias TheMealDBResponse = TheMealDBNetworkResponse<[MealDetailsNetworkResponse]>?
@@ -76,7 +76,7 @@ struct TheMealDBNetworkEngine: MealsStorage {
                 Ingredient(name: responseDetails.ingredient20 ?? "", quantity: responseDetails.measurement20 ?? ""),
             ]
             
-            let mealDetails = MealDetails(name: responseDetails.name,
+            let mealDetails = MealDetail(name: responseDetails.name,
                                           instructions: responseDetails.instructions,
                                           ingredients: ingridients)
             completion(mealDetails)
